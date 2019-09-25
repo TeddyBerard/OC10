@@ -7,66 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3AF0C889233BD045006A091A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0C888233BD045006A091A /* AppDelegate.swift */; };
-		3AF0C88B233BD045006A091A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0C88A233BD045006A091A /* ViewController.swift */; };
-		3AF0C88E233BD045006A091A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF0C88C233BD045006A091A /* Main.storyboard */; };
-		3AF0C891233BD045006A091A /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0C88F233BD045006A091A /* Reciplease.xcdatamodeld */; };
-		3AF0C893233BD047006A091A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF0C892233BD047006A091A /* Assets.xcassets */; };
-		3AF0C896233BD047006A091A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF0C894233BD047006A091A /* LaunchScreen.storyboard */; };
-		3AF0C8A1233BD047006A091A /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0C8A0233BD047006A091A /* RecipleaseTests.swift */; };
-		3AF0C8AC233BD047006A091A /* RecipleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0C8AB233BD047006A091A /* RecipleaseUITests.swift */; };
+		3A7F294D233BD0A6003D0C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F294C233BD0A6003D0C79 /* AppDelegate.swift */; };
+		3A7F294F233BD0A6003D0C79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F294E233BD0A6003D0C79 /* ViewController.swift */; };
+		3A7F2952233BD0A6003D0C79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F2950233BD0A6003D0C79 /* Main.storyboard */; };
+		3A7F2955233BD0A6003D0C79 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F2953233BD0A6003D0C79 /* Reciplease.xcdatamodeld */; };
+		3A7F2957233BD0A6003D0C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F2956233BD0A6003D0C79 /* Assets.xcassets */; };
+		3A7F295A233BD0A6003D0C79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F2958233BD0A6003D0C79 /* LaunchScreen.storyboard */; };
+		3A7F2965233BD0A7003D0C79 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F2964233BD0A7003D0C79 /* RecipleaseTests.swift */; };
+		3A7F2970233BD0A7003D0C79 /* RecipleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F296F233BD0A7003D0C79 /* RecipleaseUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3AF0C89D233BD047006A091A /* PBXContainerItemProxy */ = {
+		3A7F2961233BD0A7003D0C79 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3AF0C87D233BD045006A091A /* Project object */;
+			containerPortal = 3A7F2941233BD0A6003D0C79 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3AF0C884233BD045006A091A;
+			remoteGlobalIDString = 3A7F2948233BD0A6003D0C79;
 			remoteInfo = Reciplease;
 		};
-		3AF0C8A8233BD047006A091A /* PBXContainerItemProxy */ = {
+		3A7F296C233BD0A7003D0C79 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3AF0C87D233BD045006A091A /* Project object */;
+			containerPortal = 3A7F2941233BD0A6003D0C79 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3AF0C884233BD045006A091A;
+			remoteGlobalIDString = 3A7F2948233BD0A6003D0C79;
 			remoteInfo = Reciplease;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3AF0C885233BD045006A091A /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AF0C888233BD045006A091A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3AF0C88A233BD045006A091A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3AF0C88D233BD045006A091A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3AF0C890233BD045006A091A /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
-		3AF0C892233BD047006A091A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3AF0C895233BD047006A091A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3AF0C897233BD047006A091A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AF0C89C233BD047006A091A /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AF0C8A0233BD047006A091A /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
-		3AF0C8A2233BD047006A091A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AF0C8A7233BD047006A091A /* RecipleaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AF0C8AB233BD047006A091A /* RecipleaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITests.swift; sourceTree = "<group>"; };
-		3AF0C8AD233BD047006A091A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A7F2949233BD0A6003D0C79 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7F294C233BD0A6003D0C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A7F294E233BD0A6003D0C79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A7F2951233BD0A6003D0C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A7F2954233BD0A6003D0C79 /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
+		3A7F2956233BD0A6003D0C79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A7F2959233BD0A6003D0C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A7F295B233BD0A6003D0C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A7F2960233BD0A7003D0C79 /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7F2964233BD0A7003D0C79 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
+		3A7F2966233BD0A7003D0C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A7F296B233BD0A7003D0C79 /* RecipleaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7F296F233BD0A7003D0C79 /* RecipleaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITests.swift; sourceTree = "<group>"; };
+		3A7F2971233BD0A7003D0C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3AF0C882233BD045006A091A /* Frameworks */ = {
+		3A7F2946233BD0A6003D0C79 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3AF0C899233BD047006A091A /* Frameworks */ = {
+		3A7F295D233BD0A7003D0C79 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3AF0C8A4233BD047006A091A /* Frameworks */ = {
+		3A7F2968233BD0A7003D0C79 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,54 +76,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3AF0C87C233BD045006A091A = {
+		3A7F2940233BD0A6003D0C79 = {
 			isa = PBXGroup;
 			children = (
-				3AF0C887233BD045006A091A /* Reciplease */,
-				3AF0C89F233BD047006A091A /* RecipleaseTests */,
-				3AF0C8AA233BD047006A091A /* RecipleaseUITests */,
-				3AF0C886233BD045006A091A /* Products */,
+				3A7F294B233BD0A6003D0C79 /* Reciplease */,
+				3A7F2963233BD0A7003D0C79 /* RecipleaseTests */,
+				3A7F296E233BD0A7003D0C79 /* RecipleaseUITests */,
+				3A7F294A233BD0A6003D0C79 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3AF0C886233BD045006A091A /* Products */ = {
+		3A7F294A233BD0A6003D0C79 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3AF0C885233BD045006A091A /* Reciplease.app */,
-				3AF0C89C233BD047006A091A /* RecipleaseTests.xctest */,
-				3AF0C8A7233BD047006A091A /* RecipleaseUITests.xctest */,
+				3A7F2949233BD0A6003D0C79 /* Reciplease.app */,
+				3A7F2960233BD0A7003D0C79 /* RecipleaseTests.xctest */,
+				3A7F296B233BD0A7003D0C79 /* RecipleaseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3AF0C887233BD045006A091A /* Reciplease */ = {
+		3A7F294B233BD0A6003D0C79 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
-				3AF0C888233BD045006A091A /* AppDelegate.swift */,
-				3AF0C88A233BD045006A091A /* ViewController.swift */,
-				3AF0C88C233BD045006A091A /* Main.storyboard */,
-				3AF0C892233BD047006A091A /* Assets.xcassets */,
-				3AF0C894233BD047006A091A /* LaunchScreen.storyboard */,
-				3AF0C897233BD047006A091A /* Info.plist */,
-				3AF0C88F233BD045006A091A /* Reciplease.xcdatamodeld */,
+				3A7F294C233BD0A6003D0C79 /* AppDelegate.swift */,
+				3A7F294E233BD0A6003D0C79 /* ViewController.swift */,
+				3A7F2950233BD0A6003D0C79 /* Main.storyboard */,
+				3A7F2956233BD0A6003D0C79 /* Assets.xcassets */,
+				3A7F2958233BD0A6003D0C79 /* LaunchScreen.storyboard */,
+				3A7F295B233BD0A6003D0C79 /* Info.plist */,
+				3A7F2953233BD0A6003D0C79 /* Reciplease.xcdatamodeld */,
 			);
 			path = Reciplease;
 			sourceTree = "<group>";
 		};
-		3AF0C89F233BD047006A091A /* RecipleaseTests */ = {
+		3A7F2963233BD0A7003D0C79 /* RecipleaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				3AF0C8A0233BD047006A091A /* RecipleaseTests.swift */,
-				3AF0C8A2233BD047006A091A /* Info.plist */,
+				3A7F2964233BD0A7003D0C79 /* RecipleaseTests.swift */,
+				3A7F2966233BD0A7003D0C79 /* Info.plist */,
 			);
 			path = RecipleaseTests;
 			sourceTree = "<group>";
 		};
-		3AF0C8AA233BD047006A091A /* RecipleaseUITests */ = {
+		3A7F296E233BD0A7003D0C79 /* RecipleaseUITests */ = {
 			isa = PBXGroup;
 			children = (
-				3AF0C8AB233BD047006A091A /* RecipleaseUITests.swift */,
-				3AF0C8AD233BD047006A091A /* Info.plist */,
+				3A7F296F233BD0A7003D0C79 /* RecipleaseUITests.swift */,
+				3A7F2971233BD0A7003D0C79 /* Info.plist */,
 			);
 			path = RecipleaseUITests;
 			sourceTree = "<group>";
@@ -131,13 +131,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3AF0C884233BD045006A091A /* Reciplease */ = {
+		3A7F2948233BD0A6003D0C79 /* Reciplease */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AF0C8B0233BD047006A091A /* Build configuration list for PBXNativeTarget "Reciplease" */;
+			buildConfigurationList = 3A7F2974233BD0A7003D0C79 /* Build configuration list for PBXNativeTarget "Reciplease" */;
 			buildPhases = (
-				3AF0C881233BD045006A091A /* Sources */,
-				3AF0C882233BD045006A091A /* Frameworks */,
-				3AF0C883233BD045006A091A /* Resources */,
+				3A7F2945233BD0A6003D0C79 /* Sources */,
+				3A7F2946233BD0A6003D0C79 /* Frameworks */,
+				3A7F2947233BD0A6003D0C79 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -145,69 +145,69 @@
 			);
 			name = Reciplease;
 			productName = Reciplease;
-			productReference = 3AF0C885233BD045006A091A /* Reciplease.app */;
+			productReference = 3A7F2949233BD0A6003D0C79 /* Reciplease.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3AF0C89B233BD047006A091A /* RecipleaseTests */ = {
+		3A7F295F233BD0A7003D0C79 /* RecipleaseTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AF0C8B3233BD047006A091A /* Build configuration list for PBXNativeTarget "RecipleaseTests" */;
+			buildConfigurationList = 3A7F2977233BD0A7003D0C79 /* Build configuration list for PBXNativeTarget "RecipleaseTests" */;
 			buildPhases = (
-				3AF0C898233BD047006A091A /* Sources */,
-				3AF0C899233BD047006A091A /* Frameworks */,
-				3AF0C89A233BD047006A091A /* Resources */,
+				3A7F295C233BD0A7003D0C79 /* Sources */,
+				3A7F295D233BD0A7003D0C79 /* Frameworks */,
+				3A7F295E233BD0A7003D0C79 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3AF0C89E233BD047006A091A /* PBXTargetDependency */,
+				3A7F2962233BD0A7003D0C79 /* PBXTargetDependency */,
 			);
 			name = RecipleaseTests;
 			productName = RecipleaseTests;
-			productReference = 3AF0C89C233BD047006A091A /* RecipleaseTests.xctest */;
+			productReference = 3A7F2960233BD0A7003D0C79 /* RecipleaseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3AF0C8A6233BD047006A091A /* RecipleaseUITests */ = {
+		3A7F296A233BD0A7003D0C79 /* RecipleaseUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AF0C8B6233BD047006A091A /* Build configuration list for PBXNativeTarget "RecipleaseUITests" */;
+			buildConfigurationList = 3A7F297A233BD0A7003D0C79 /* Build configuration list for PBXNativeTarget "RecipleaseUITests" */;
 			buildPhases = (
-				3AF0C8A3233BD047006A091A /* Sources */,
-				3AF0C8A4233BD047006A091A /* Frameworks */,
-				3AF0C8A5233BD047006A091A /* Resources */,
+				3A7F2967233BD0A7003D0C79 /* Sources */,
+				3A7F2968233BD0A7003D0C79 /* Frameworks */,
+				3A7F2969233BD0A7003D0C79 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3AF0C8A9233BD047006A091A /* PBXTargetDependency */,
+				3A7F296D233BD0A7003D0C79 /* PBXTargetDependency */,
 			);
 			name = RecipleaseUITests;
 			productName = RecipleaseUITests;
-			productReference = 3AF0C8A7233BD047006A091A /* RecipleaseUITests.xctest */;
+			productReference = 3A7F296B233BD0A7003D0C79 /* RecipleaseUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3AF0C87D233BD045006A091A /* Project object */ = {
+		3A7F2941233BD0A6003D0C79 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Teddy Bérard";
 				TargetAttributes = {
-					3AF0C884233BD045006A091A = {
+					3A7F2948233BD0A6003D0C79 = {
 						CreatedOnToolsVersion = 10.3;
 					};
-					3AF0C89B233BD047006A091A = {
+					3A7F295F233BD0A7003D0C79 = {
 						CreatedOnToolsVersion = 10.3;
-						TestTargetID = 3AF0C884233BD045006A091A;
+						TestTargetID = 3A7F2948233BD0A6003D0C79;
 					};
-					3AF0C8A6233BD047006A091A = {
+					3A7F296A233BD0A7003D0C79 = {
 						CreatedOnToolsVersion = 10.3;
-						TestTargetID = 3AF0C884233BD045006A091A;
+						TestTargetID = 3A7F2948233BD0A6003D0C79;
 					};
 				};
 			};
-			buildConfigurationList = 3AF0C880233BD045006A091A /* Build configuration list for PBXProject "Reciplease" */;
+			buildConfigurationList = 3A7F2944233BD0A6003D0C79 /* Build configuration list for PBXProject "Reciplease" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -215,37 +215,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 3AF0C87C233BD045006A091A;
-			productRefGroup = 3AF0C886233BD045006A091A /* Products */;
+			mainGroup = 3A7F2940233BD0A6003D0C79;
+			productRefGroup = 3A7F294A233BD0A6003D0C79 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3AF0C884233BD045006A091A /* Reciplease */,
-				3AF0C89B233BD047006A091A /* RecipleaseTests */,
-				3AF0C8A6233BD047006A091A /* RecipleaseUITests */,
+				3A7F2948233BD0A6003D0C79 /* Reciplease */,
+				3A7F295F233BD0A7003D0C79 /* RecipleaseTests */,
+				3A7F296A233BD0A7003D0C79 /* RecipleaseUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3AF0C883233BD045006A091A /* Resources */ = {
+		3A7F2947233BD0A6003D0C79 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF0C896233BD047006A091A /* LaunchScreen.storyboard in Resources */,
-				3AF0C893233BD047006A091A /* Assets.xcassets in Resources */,
-				3AF0C88E233BD045006A091A /* Main.storyboard in Resources */,
+				3A7F295A233BD0A6003D0C79 /* LaunchScreen.storyboard in Resources */,
+				3A7F2957233BD0A6003D0C79 /* Assets.xcassets in Resources */,
+				3A7F2952233BD0A6003D0C79 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3AF0C89A233BD047006A091A /* Resources */ = {
+		3A7F295E233BD0A7003D0C79 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3AF0C8A5233BD047006A091A /* Resources */ = {
+		3A7F2969233BD0A7003D0C79 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -255,60 +255,60 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3AF0C881233BD045006A091A /* Sources */ = {
+		3A7F2945233BD0A6003D0C79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF0C891233BD045006A091A /* Reciplease.xcdatamodeld in Sources */,
-				3AF0C88B233BD045006A091A /* ViewController.swift in Sources */,
-				3AF0C889233BD045006A091A /* AppDelegate.swift in Sources */,
+				3A7F2955233BD0A6003D0C79 /* Reciplease.xcdatamodeld in Sources */,
+				3A7F294F233BD0A6003D0C79 /* ViewController.swift in Sources */,
+				3A7F294D233BD0A6003D0C79 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3AF0C898233BD047006A091A /* Sources */ = {
+		3A7F295C233BD0A7003D0C79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF0C8A1233BD047006A091A /* RecipleaseTests.swift in Sources */,
+				3A7F2965233BD0A7003D0C79 /* RecipleaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3AF0C8A3233BD047006A091A /* Sources */ = {
+		3A7F2967233BD0A7003D0C79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF0C8AC233BD047006A091A /* RecipleaseUITests.swift in Sources */,
+				3A7F2970233BD0A7003D0C79 /* RecipleaseUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3AF0C89E233BD047006A091A /* PBXTargetDependency */ = {
+		3A7F2962233BD0A7003D0C79 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3AF0C884233BD045006A091A /* Reciplease */;
-			targetProxy = 3AF0C89D233BD047006A091A /* PBXContainerItemProxy */;
+			target = 3A7F2948233BD0A6003D0C79 /* Reciplease */;
+			targetProxy = 3A7F2961233BD0A7003D0C79 /* PBXContainerItemProxy */;
 		};
-		3AF0C8A9233BD047006A091A /* PBXTargetDependency */ = {
+		3A7F296D233BD0A7003D0C79 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3AF0C884233BD045006A091A /* Reciplease */;
-			targetProxy = 3AF0C8A8233BD047006A091A /* PBXContainerItemProxy */;
+			target = 3A7F2948233BD0A6003D0C79 /* Reciplease */;
+			targetProxy = 3A7F296C233BD0A7003D0C79 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3AF0C88C233BD045006A091A /* Main.storyboard */ = {
+		3A7F2950233BD0A6003D0C79 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3AF0C88D233BD045006A091A /* Base */,
+				3A7F2951233BD0A6003D0C79 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		3AF0C894233BD047006A091A /* LaunchScreen.storyboard */ = {
+		3A7F2958233BD0A6003D0C79 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3AF0C895233BD047006A091A /* Base */,
+				3A7F2959233BD0A6003D0C79 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3AF0C8AE233BD047006A091A /* Debug */ = {
+		3A7F2972233BD0A7003D0C79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -377,7 +377,7 @@
 			};
 			name = Debug;
 		};
-		3AF0C8AF233BD047006A091A /* Release */ = {
+		3A7F2973233BD0A7003D0C79 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -432,7 +432,7 @@
 			};
 			name = Release;
 		};
-		3AF0C8B1233BD047006A091A /* Debug */ = {
+		3A7F2975233BD0A7003D0C79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -450,7 +450,7 @@
 			};
 			name = Debug;
 		};
-		3AF0C8B2233BD047006A091A /* Release */ = {
+		3A7F2976233BD0A7003D0C79 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -468,7 +468,7 @@
 			};
 			name = Release;
 		};
-		3AF0C8B4233BD047006A091A /* Debug */ = {
+		3A7F2978233BD0A7003D0C79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -489,7 +489,7 @@
 			};
 			name = Debug;
 		};
-		3AF0C8B5233BD047006A091A /* Release */ = {
+		3A7F2979233BD0A7003D0C79 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -510,7 +510,7 @@
 			};
 			name = Release;
 		};
-		3AF0C8B7233BD047006A091A /* Debug */ = {
+		3A7F297B233BD0A7003D0C79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -530,7 +530,7 @@
 			};
 			name = Debug;
 		};
-		3AF0C8B8233BD047006A091A /* Release */ = {
+		3A7F297C233BD0A7003D0C79 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -553,38 +553,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3AF0C880233BD045006A091A /* Build configuration list for PBXProject "Reciplease" */ = {
+		3A7F2944233BD0A6003D0C79 /* Build configuration list for PBXProject "Reciplease" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3AF0C8AE233BD047006A091A /* Debug */,
-				3AF0C8AF233BD047006A091A /* Release */,
+				3A7F2972233BD0A7003D0C79 /* Debug */,
+				3A7F2973233BD0A7003D0C79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AF0C8B0233BD047006A091A /* Build configuration list for PBXNativeTarget "Reciplease" */ = {
+		3A7F2974233BD0A7003D0C79 /* Build configuration list for PBXNativeTarget "Reciplease" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3AF0C8B1233BD047006A091A /* Debug */,
-				3AF0C8B2233BD047006A091A /* Release */,
+				3A7F2975233BD0A7003D0C79 /* Debug */,
+				3A7F2976233BD0A7003D0C79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AF0C8B3233BD047006A091A /* Build configuration list for PBXNativeTarget "RecipleaseTests" */ = {
+		3A7F2977233BD0A7003D0C79 /* Build configuration list for PBXNativeTarget "RecipleaseTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3AF0C8B4233BD047006A091A /* Debug */,
-				3AF0C8B5233BD047006A091A /* Release */,
+				3A7F2978233BD0A7003D0C79 /* Debug */,
+				3A7F2979233BD0A7003D0C79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AF0C8B6233BD047006A091A /* Build configuration list for PBXNativeTarget "RecipleaseUITests" */ = {
+		3A7F297A233BD0A7003D0C79 /* Build configuration list for PBXNativeTarget "RecipleaseUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3AF0C8B7233BD047006A091A /* Debug */,
-				3AF0C8B8233BD047006A091A /* Release */,
+				3A7F297B233BD0A7003D0C79 /* Debug */,
+				3A7F297C233BD0A7003D0C79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -592,17 +592,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		3AF0C88F233BD045006A091A /* Reciplease.xcdatamodeld */ = {
+		3A7F2953233BD0A6003D0C79 /* Reciplease.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3AF0C890233BD045006A091A /* Reciplease.xcdatamodel */,
+				3A7F2954233BD0A6003D0C79 /* Reciplease.xcdatamodel */,
 			);
-			currentVersion = 3AF0C890233BD045006A091A /* Reciplease.xcdatamodel */;
+			currentVersion = 3A7F2954233BD0A6003D0C79 /* Reciplease.xcdatamodel */;
 			path = Reciplease.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 3AF0C87D233BD045006A091A /* Project object */;
+	rootObject = 3A7F2941233BD0A6003D0C79 /* Project object */;
 }
