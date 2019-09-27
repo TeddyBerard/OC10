@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3A7F294D233BD0A6003D0C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F294C233BD0A6003D0C79 /* AppDelegate.swift */; };
-		3A7F294F233BD0A6003D0C79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F294E233BD0A6003D0C79 /* ViewController.swift */; };
+		3A7F294F233BD0A6003D0C79 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F294E233BD0A6003D0C79 /* SearchViewController.swift */; };
 		3A7F2952233BD0A6003D0C79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F2950233BD0A6003D0C79 /* Main.storyboard */; };
 		3A7F2955233BD0A6003D0C79 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F2953233BD0A6003D0C79 /* Reciplease.xcdatamodeld */; };
 		3A7F2957233BD0A6003D0C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F2956233BD0A6003D0C79 /* Assets.xcassets */; };
 		3A7F295A233BD0A6003D0C79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F2958233BD0A6003D0C79 /* LaunchScreen.storyboard */; };
 		3A7F2965233BD0A7003D0C79 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F2964233BD0A7003D0C79 /* RecipleaseTests.swift */; };
 		3A7F2970233BD0A7003D0C79 /* RecipleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F296F233BD0A7003D0C79 /* RecipleaseUITests.swift */; };
+		3A7F2985233D30E4003D0C79 /* Lemon Brush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F2984233D30E4003D0C79 /* Lemon Brush.otf */; };
+		3A7F2988233D3370003D0C79 /* IngredientsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F2987233D3370003D0C79 /* IngredientsListView.swift */; };
+		3A7F298A233D33BB003D0C79 /* IngredientsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F2989233D33BB003D0C79 /* IngredientsListView.xib */; };
 		932A6C0EB4B4A009A18686AF /* Pods_Reciplease_RecipleaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59A3D24F298A58A17272E61 /* Pods_Reciplease_RecipleaseUITests.framework */; };
 		CED04876B63E5B8D4186BFF6 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D5234671EC7B61658E1628 /* Pods_Reciplease.framework */; };
 		DE4D717966C2706D820FA4A5 /* Pods_RecipleaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C88AD7451CFEF407ABF96D8 /* Pods_RecipleaseTests.framework */; };
@@ -42,7 +45,7 @@
 		08867F6CDE6502B6C3FDB0D2 /* Pods-Reciplease-RecipleaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease-RecipleaseUITests.release.xcconfig"; path = "Target Support Files/Pods-Reciplease-RecipleaseUITests/Pods-Reciplease-RecipleaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3A7F2949233BD0A6003D0C79 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7F294C233BD0A6003D0C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3A7F294E233BD0A6003D0C79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A7F294E233BD0A6003D0C79 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3A7F2951233BD0A6003D0C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A7F2954233BD0A6003D0C79 /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
 		3A7F2956233BD0A6003D0C79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +57,9 @@
 		3A7F296B233BD0A7003D0C79 /* RecipleaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7F296F233BD0A7003D0C79 /* RecipleaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITests.swift; sourceTree = "<group>"; };
 		3A7F2971233BD0A7003D0C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A7F2984233D30E4003D0C79 /* Lemon Brush.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lemon Brush.otf"; sourceTree = "<group>"; };
+		3A7F2987233D3370003D0C79 /* IngredientsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsListView.swift; sourceTree = "<group>"; };
+		3A7F2989233D33BB003D0C79 /* IngredientsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsListView.xib; sourceTree = "<group>"; };
 		3C88AD7451CFEF407ABF96D8 /* Pods_RecipleaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipleaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2A92292498490A94E1CD0E /* Pods-RecipleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.release.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		7518BF8C894856221A598B60 /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,11 +122,11 @@
 		3A7F294B233BD0A6003D0C79 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
-				3A7F294C233BD0A6003D0C79 /* AppDelegate.swift */,
-				3A7F294E233BD0A6003D0C79 /* ViewController.swift */,
-				3A7F2950233BD0A6003D0C79 /* Main.storyboard */,
-				3A7F2956233BD0A6003D0C79 /* Assets.xcassets */,
-				3A7F2958233BD0A6003D0C79 /* LaunchScreen.storyboard */,
+				3A7F2980233D196F003D0C79 /* Controller */,
+				3A7F297F233D196A003D0C79 /* View */,
+				3A7F297E233D1962003D0C79 /* Model */,
+				3A7F2981233D1979003D0C79 /* Resources */,
+				3A7F2982233D1995003D0C79 /* Storyboard */,
 				3A7F295B233BD0A6003D0C79 /* Info.plist */,
 				3A7F2953233BD0A6003D0C79 /* Reciplease.xcdatamodeld */,
 			);
@@ -143,6 +149,65 @@
 				3A7F2971233BD0A7003D0C79 /* Info.plist */,
 			);
 			path = RecipleaseUITests;
+			sourceTree = "<group>";
+		};
+		3A7F297E233D1962003D0C79 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A7F297F233D196A003D0C79 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A7F2986233D334A003D0C79 /* ingredientsListView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A7F2980233D196F003D0C79 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A7F294E233BD0A6003D0C79 /* SearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3A7F2981233D1979003D0C79 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A7F2983233D30D6003D0C79 /* Fonts */,
+				3A7F2956233BD0A6003D0C79 /* Assets.xcassets */,
+				3A7F294C233BD0A6003D0C79 /* AppDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3A7F2982233D1995003D0C79 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3A7F2950233BD0A6003D0C79 /* Main.storyboard */,
+				3A7F2958233BD0A6003D0C79 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		3A7F2983233D30D6003D0C79 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3A7F2984233D30E4003D0C79 /* Lemon Brush.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3A7F2986233D334A003D0C79 /* ingredientsListView */ = {
+			isa = PBXGroup;
+			children = (
+				3A7F2987233D3370003D0C79 /* IngredientsListView.swift */,
+				3A7F2989233D33BB003D0C79 /* IngredientsListView.xib */,
+			);
+			path = ingredientsListView;
 			sourceTree = "<group>";
 		};
 		4554EB03E3EDAD6D77D7CA86 /* Pods */ = {
@@ -280,6 +345,8 @@
 			files = (
 				3A7F295A233BD0A6003D0C79 /* LaunchScreen.storyboard in Resources */,
 				3A7F2957233BD0A6003D0C79 /* Assets.xcassets in Resources */,
+				3A7F2985233D30E4003D0C79 /* Lemon Brush.otf in Resources */,
+				3A7F298A233D33BB003D0C79 /* IngredientsListView.xib in Resources */,
 				3A7F2952233BD0A6003D0C79 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,8 +493,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7F2955233BD0A6003D0C79 /* Reciplease.xcdatamodeld in Sources */,
-				3A7F294F233BD0A6003D0C79 /* ViewController.swift in Sources */,
+				3A7F294F233BD0A6003D0C79 /* SearchViewController.swift in Sources */,
 				3A7F294D233BD0A6003D0C79 /* AppDelegate.swift in Sources */,
+				3A7F2988233D3370003D0C79 /* IngredientsListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lemon Brush.otf">
+            <string>Lemon-Brush---Personal-Use</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IngredientsListView" customModule="Reciplease" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="z9j-to-YA4"/>
+                <outlet property="listTextView" destination="haL-6F-BTq" id="mGr-I4-4ce"/>
+                <outlet property="refrigeratorImageView" destination="ndv-gf-G94" id="8U9-Tz-P0R"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="331" height="639"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refrigeratorBig" translatesAutoresizingMaskIntoConstraints="NO" id="ndv-gf-G94">
+                    <rect key="frame" x="0.0" y="5" width="331" height="639"/>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haL-6F-BTq">
+                    <rect key="frame" x="16" y="104" width="299" height="501"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="32"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRp-O3-NFA">
+                    <rect key="frame" x="273" y="44" width="43" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="43" id="BwE-NG-2f9"/>
+                        <constraint firstAttribute="height" constant="42" id="a80-2g-ky7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="32"/>
+                    <state key="normal" title="Clear">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="clearAction:" destination="-1" eventType="touchUpInside" id="onV-EZ-gBf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vRp-O3-NFA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="0zA-nI-Far"/>
+                <constraint firstItem="ndv-gf-G94" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="2YG-yf-smT"/>
+                <constraint firstItem="haL-6F-BTq" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="5HH-Xf-5dZ"/>
+                <constraint firstItem="ndv-gf-G94" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Ah0-3I-URD"/>
+                <constraint firstAttribute="trailing" secondItem="vRp-O3-NFA" secondAttribute="trailing" constant="15" id="Jyw-LH-6Vd"/>
+                <constraint firstItem="haL-6F-BTq" firstAttribute="top" secondItem="vRp-O3-NFA" secondAttribute="bottom" constant="18" id="RvB-z0-AMR"/>
+                <constraint firstItem="haL-6F-BTq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Teu-mo-fPh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="haL-6F-BTq" secondAttribute="trailing" constant="16" id="Yat-se-MZq"/>
+                <constraint firstItem="ndv-gf-G94" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="rxS-qK-ttm"/>
+                <constraint firstItem="ndv-gf-G94" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="x63-AM-BCJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="12.318840579710146" y="255.46875"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="refrigeratorBig" width="512" height="512"/>
+    </resources>
+</document>

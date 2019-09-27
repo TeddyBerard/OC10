@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9pJ-5M-2bX">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lemon Brush.otf">
+            <string>Lemon-Brush---Personal-Use</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Favorite-->
+        <scene sceneID="cYT-X4-I2J">
+            <objects>
+                <viewController id="5gs-QP-0Fz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ua3-m2-ThF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.89019607840000003" green="0.99607843139999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="b9o-uJ-nh9"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="recipe-book" selectedImage="recipe-book" id="L88-MU-eHx">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVW-6a-YRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-355" y="242"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="AaO-61-3Tn">
+            <objects>
+                <viewController id="1K8-s4-INZ" customClass="SearchViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RL0-mS-Jc0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reciplease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wts-ry-8kl">
+                                <rect key="frame" x="135.66666666666669" y="44" width="142.66666666666669" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="yFP-4M-91p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCE-9R-YAX" customClass="IngredientsListView" customModule="Reciplease" customModuleProvider="target">
+                                <rect key="frame" x="38" y="189" width="338" height="541"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="N5r-fZ-IXQ">
+                                <rect key="frame" x="38" y="124" width="338" height="47"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingredient" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6EO-3b-tk2">
+                                        <rect key="frame" x="0.0" y="0.0" width="236.66666666666666" height="47"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="32"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJS-bi-OE2">
+                                        <rect key="frame" x="248.66666666666671" y="0.0" width="89.333333333333343" height="47"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="30"/>
+                                        <state key="normal" title="Add">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addIngredientAction:" destination="1K8-s4-INZ" eventType="touchUpInside" id="Kd4-r5-PLE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6EO-3b-tk2" firstAttribute="width" secondItem="N5r-fZ-IXQ" secondAttribute="width" multiplier="0.7" id="u8g-fX-5RW"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cr-W9-LST">
+                                <rect key="frame" x="38" y="748" width="338" height="47"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="wtj-vl-fsy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="30"/>
+                                <state key="normal" title="Recipe">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchAction:" destination="1K8-s4-INZ" eventType="touchUpInside" id="Cnb-h8-tLl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89019607840000003" green="0.99607843139999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xCE-9R-YAX" firstAttribute="top" secondItem="N5r-fZ-IXQ" secondAttribute="bottom" constant="18" id="5VB-D9-nRO"/>
+                            <constraint firstItem="N5r-fZ-IXQ" firstAttribute="leading" secondItem="gQ8-NV-rNl" secondAttribute="leading" constant="38" id="8Jd-Kg-42U"/>
+                            <constraint firstItem="xCE-9R-YAX" firstAttribute="leading" secondItem="gQ8-NV-rNl" secondAttribute="leading" constant="38" id="Jqu-pq-Dl3"/>
+                            <constraint firstItem="gQ8-NV-rNl" firstAttribute="trailing" secondItem="xCE-9R-YAX" secondAttribute="trailing" constant="38" id="K18-6Y-J4g"/>
+                            <constraint firstItem="1Cr-W9-LST" firstAttribute="top" secondItem="xCE-9R-YAX" secondAttribute="bottom" constant="18" id="VQ5-Gc-hXg"/>
+                            <constraint firstItem="N5r-fZ-IXQ" firstAttribute="top" secondItem="Wts-ry-8kl" secondAttribute="bottom" constant="24" id="ZJp-c7-yoD"/>
+                            <constraint firstItem="gQ8-NV-rNl" firstAttribute="bottom" secondItem="1Cr-W9-LST" secondAttribute="bottom" constant="18" id="cdS-eL-hkv"/>
+                            <constraint firstItem="N5r-fZ-IXQ" firstAttribute="height" secondItem="1Cr-W9-LST" secondAttribute="height" id="f1r-3l-Mrq"/>
+                            <constraint firstItem="gQ8-NV-rNl" firstAttribute="trailing" secondItem="N5r-fZ-IXQ" secondAttribute="trailing" constant="38" id="oMz-RC-aew"/>
+                            <constraint firstItem="1Cr-W9-LST" firstAttribute="leading" secondItem="gQ8-NV-rNl" secondAttribute="leading" constant="38" id="orm-aU-sm0"/>
+                            <constraint firstItem="Wts-ry-8kl" firstAttribute="top" secondItem="gQ8-NV-rNl" secondAttribute="top" id="thz-Ae-V8K"/>
+                            <constraint firstItem="Wts-ry-8kl" firstAttribute="centerX" secondItem="gQ8-NV-rNl" secondAttribute="centerX" id="vRI-Wr-GvM"/>
+                            <constraint firstItem="gQ8-NV-rNl" firstAttribute="trailing" secondItem="1Cr-W9-LST" secondAttribute="trailing" constant="38" id="ylw-hw-tlk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gQ8-NV-rNl"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="refrigerator" selectedImage="refrigerator" id="OFw-uJ-QNk">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="addButton" destination="OJS-bi-OE2" id="srx-dl-6OF"/>
+                        <outlet property="ingredientListView" destination="xCE-9R-YAX" id="bFe-Y7-ir6"/>
+                        <outlet property="ingredientTextField" destination="6EO-3b-tk2" id="Pu8-Do-mpR"/>
+                        <outlet property="recipeButton" destination="1Cr-W9-LST" id="9yK-6a-zBG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TIE-pE-Mh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-355.07246376811599" y="-407.14285714285711"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="cpA-Cw-yvh">
+            <objects>
+                <tabBarController id="9pJ-5M-2bX" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="JUo-Zo-sW7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1K8-s4-INZ" kind="relationship" relationship="viewControllers" id="cNX-hw-fRf"/>
+                        <segue destination="5gs-QP-0Fz" kind="relationship" relationship="viewControllers" id="bHz-DF-wkb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4aa-V6-WkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1274" y="-82"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="recipe-book" width="32" height="32"/>
+        <image name="refrigerator" width="32" height="32"/>
+    </resources>
+</document>
