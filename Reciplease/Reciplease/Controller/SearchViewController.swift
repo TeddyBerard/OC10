@@ -82,6 +82,7 @@ class SearchViewController: UIViewController {
         ingredientListView.clear()
         addButton.setTitle("Add", for: .normal)
         ingredientTextField.isEnabled = true
+        recipeButton.isEnabled = true
     }
 
     // MARK: - @IBAction
@@ -107,6 +108,7 @@ class SearchViewController: UIViewController {
                                 wSelf.isDisplayed = true
                                 wSelf.addButton.setTitle("Close", for: .normal)
                                 wSelf.ingredientTextField.isEnabled = false
+                                wSelf.recipeButton.isEnabled = false
 
         })
     }
