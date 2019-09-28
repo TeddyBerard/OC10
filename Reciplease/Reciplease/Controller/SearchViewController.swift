@@ -16,6 +16,13 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var ingredientTextField: UITextField!
     @IBOutlet weak var recipeButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var resultTableView: UITableView!
+    
+    var search: Search = Search()
+    
+    var recipes: [Recipe] = []
+    
+    fileprivate var isDisplayed: Bool = false
 
     // MARK: - Cycle Life
 
@@ -23,6 +30,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         setupUIButtons()
         setupUITextField()
+        setupTableView()
     }
 
     // MARK: - Setup UI
@@ -56,19 +64,92 @@ class SearchViewController: UIViewController {
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = false
     }
+    
+    func addIngredient() {
+        guard let ingredient = ingredientTextField.text?
+            .components(separatedBy: .whitespacesAndNewlines)
+            .joined() else { return }
+        
+        ingredientListView.addIngredientToList(ingredient)
+        ingredientTextField.text = ""
+    }
+    
+    func resetList() {
+        isDisplayed = false
+        resultTableView.backgroundColor = .clear
+        recipes = []
+        resultTableView.reloadData()
+        ingredientListView.clear()
+        addButton.setTitle("Add", for: .normal)
+        ingredientTextField.isEnabled = true
+    }
 
     // MARK: - @IBAction
 
     @IBAction func addIngredientAction(_ sender: Any) {
-        guard let ingredient = ingredientTextField.text?
-            .components(separatedBy: .whitespacesAndNewlines)
-            .joined() else { return }
-
-        ingredientListView.addIngredientToList(ingredient)
-        ingredientTextField.text = ""
+        if !isDisplayed {
+            addIngredient()
+        } else {
+            resetList()
+        }
     }
 
     @IBAction func searchAction(_ sender: Any) {
+        guard ingredientListView.ingredients.joined(separator: ",") != "" else { return }
+        
+        search.searchRecipes(ingredients: ingredientListView.ingredients.joined(separator: ","),
+                             completion: { [weak self] hits in
+                                guard let wSelf = self else { return }
 
+                                wSelf.recipes = hits.compactMap({ $0.recipe }).compactMap({ $0 })
+                                wSelf.resultTableView.reloadData()
+                                wSelf.resultTableView.backgroundColor = .white
+                                wSelf.isDisplayed = true
+                                wSelf.addButton.setTitle("Close", for: .normal)
+                                wSelf.ingredientTextField.isEnabled = false
+
+        })
+    }
+}
+
+// MARK: - UITableViewDelegate & UITableViewDataSource & Setup TableView
+
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func setupTableView() {
+        resultTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil),
+                                  forCellReuseIdentifier: "recipeCell")
+        resultTableView.separatorStyle = .none
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recipes.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = resultTableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath)
+            as? SearchTableViewCell else {
+                fatalError("The dequeued cell is not an instance of WeatherTableViewCell.")
+        }
+        
+//        cell.setup(name: "Test", ingredients: "TEST ingreidient", time: 10)
+//
+//        cell.selectionStyle = .none
+//        return cell
+        
+        let recipe = recipes[indexPath.row]
+        
+        cell.setup(name: recipe.label, ingredients: recipe.ingredients.joined(separator: ", "), time: recipe.time)
+        cell.selectionStyle = .none
+        
+        search.downloadImage(with: recipe.image, completion: { image in
+            cell.setupImage(with: image)
+        })
+        
+        return cell
     }
 }

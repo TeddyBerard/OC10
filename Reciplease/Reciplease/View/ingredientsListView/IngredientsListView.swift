@@ -99,12 +99,16 @@ class IngredientsListView: UIView {
             addIngredientToList(ingredient)
         }
     }
+    
+    func clear() {
+        listTextView.text = ""
+        ingredients = []
+        scaleImage(scale: 1, completion: nil)
+    }
 
     // MARK: - @IBAction
 
     @IBAction func clearAction(_ sender: Any) {
-        listTextView.text = ""
-        ingredients = []
-        scaleImage(scale: 1, completion: nil)
+        clear()
     }
 }

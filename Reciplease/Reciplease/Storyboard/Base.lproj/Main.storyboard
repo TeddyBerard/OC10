@@ -86,27 +86,39 @@
                                     <constraint firstAttribute="height" constant="47" id="wtj-vl-fsy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="30"/>
-                                <state key="normal" title="Recipe">
+                                <state key="normal" title="Recipe !">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="searchAction:" destination="1K8-s4-INZ" eventType="touchUpInside" id="Cnb-h8-tLl"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uIw-Vo-g5B">
+                                <rect key="frame" x="40" y="194" width="334" height="528"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1K8-s4-INZ" id="G74-iQ-Bn5"/>
+                                    <outlet property="delegate" destination="1K8-s4-INZ" id="LQH-IX-oKu"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.89019607840000003" green="0.99607843139999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="uIw-Vo-g5B" firstAttribute="leading" secondItem="gQ8-NV-rNl" secondAttribute="leading" constant="40" id="4AH-4C-b7y"/>
                             <constraint firstItem="xCE-9R-YAX" firstAttribute="top" secondItem="N5r-fZ-IXQ" secondAttribute="bottom" constant="18" id="5VB-D9-nRO"/>
                             <constraint firstItem="N5r-fZ-IXQ" firstAttribute="leading" secondItem="gQ8-NV-rNl" secondAttribute="leading" constant="38" id="8Jd-Kg-42U"/>
                             <constraint firstItem="xCE-9R-YAX" firstAttribute="leading" secondItem="gQ8-NV-rNl" secondAttribute="leading" constant="38" id="Jqu-pq-Dl3"/>
                             <constraint firstItem="gQ8-NV-rNl" firstAttribute="trailing" secondItem="xCE-9R-YAX" secondAttribute="trailing" constant="38" id="K18-6Y-J4g"/>
+                            <constraint firstItem="uIw-Vo-g5B" firstAttribute="top" secondItem="N5r-fZ-IXQ" secondAttribute="bottom" constant="23" id="SsX-MY-8EP"/>
                             <constraint firstItem="1Cr-W9-LST" firstAttribute="top" secondItem="xCE-9R-YAX" secondAttribute="bottom" constant="18" id="VQ5-Gc-hXg"/>
                             <constraint firstItem="N5r-fZ-IXQ" firstAttribute="top" secondItem="Wts-ry-8kl" secondAttribute="bottom" constant="24" id="ZJp-c7-yoD"/>
+                            <constraint firstItem="1Cr-W9-LST" firstAttribute="top" secondItem="uIw-Vo-g5B" secondAttribute="bottom" constant="26" id="aDE-M6-gDs"/>
                             <constraint firstItem="gQ8-NV-rNl" firstAttribute="bottom" secondItem="1Cr-W9-LST" secondAttribute="bottom" constant="18" id="cdS-eL-hkv"/>
                             <constraint firstItem="N5r-fZ-IXQ" firstAttribute="height" secondItem="1Cr-W9-LST" secondAttribute="height" id="f1r-3l-Mrq"/>
                             <constraint firstItem="gQ8-NV-rNl" firstAttribute="trailing" secondItem="N5r-fZ-IXQ" secondAttribute="trailing" constant="38" id="oMz-RC-aew"/>
                             <constraint firstItem="1Cr-W9-LST" firstAttribute="leading" secondItem="gQ8-NV-rNl" secondAttribute="leading" constant="38" id="orm-aU-sm0"/>
                             <constraint firstItem="Wts-ry-8kl" firstAttribute="top" secondItem="gQ8-NV-rNl" secondAttribute="top" id="thz-Ae-V8K"/>
+                            <constraint firstItem="gQ8-NV-rNl" firstAttribute="trailing" secondItem="uIw-Vo-g5B" secondAttribute="trailing" constant="40" id="udM-cU-HKe"/>
                             <constraint firstItem="Wts-ry-8kl" firstAttribute="centerX" secondItem="gQ8-NV-rNl" secondAttribute="centerX" id="vRI-Wr-GvM"/>
                             <constraint firstItem="gQ8-NV-rNl" firstAttribute="trailing" secondItem="1Cr-W9-LST" secondAttribute="trailing" constant="38" id="ylw-hw-tlk"/>
                         </constraints>
@@ -121,6 +133,7 @@
                         <outlet property="ingredientListView" destination="xCE-9R-YAX" id="bFe-Y7-ir6"/>
                         <outlet property="ingredientTextField" destination="6EO-3b-tk2" id="Pu8-Do-mpR"/>
                         <outlet property="recipeButton" destination="1Cr-W9-LST" id="9yK-6a-zBG"/>
+                        <outlet property="resultTableView" destination="uIw-Vo-g5B" id="sPe-Es-HBY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIE-pE-Mh0" userLabel="First Responder" sceneMemberID="firstResponder"/>

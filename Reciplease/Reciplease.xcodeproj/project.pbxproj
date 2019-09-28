@@ -18,6 +18,10 @@
 		3A7F2985233D30E4003D0C79 /* Lemon Brush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F2984233D30E4003D0C79 /* Lemon Brush.otf */; };
 		3A7F2988233D3370003D0C79 /* IngredientsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F2987233D3370003D0C79 /* IngredientsListView.swift */; };
 		3A7F298A233D33BB003D0C79 /* IngredientsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F2989233D33BB003D0C79 /* IngredientsListView.xib */; };
+		3A7F298C233E77E0003D0C79 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F298B233E77E0003D0C79 /* Recipe.swift */; };
+		3A7F298E233E7961003D0C79 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F298D233E7961003D0C79 /* Search.swift */; };
+		3A7F2992233E8DDE003D0C79 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F2990233E8DDE003D0C79 /* SearchTableViewCell.swift */; };
+		3A7F2993233E8DDE003D0C79 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F2991233E8DDE003D0C79 /* SearchTableViewCell.xib */; };
 		932A6C0EB4B4A009A18686AF /* Pods_Reciplease_RecipleaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59A3D24F298A58A17272E61 /* Pods_Reciplease_RecipleaseUITests.framework */; };
 		CED04876B63E5B8D4186BFF6 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D5234671EC7B61658E1628 /* Pods_Reciplease.framework */; };
 		DE4D717966C2706D820FA4A5 /* Pods_RecipleaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C88AD7451CFEF407ABF96D8 /* Pods_RecipleaseTests.framework */; };
@@ -60,6 +64,10 @@
 		3A7F2984233D30E4003D0C79 /* Lemon Brush.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lemon Brush.otf"; sourceTree = "<group>"; };
 		3A7F2987233D3370003D0C79 /* IngredientsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsListView.swift; sourceTree = "<group>"; };
 		3A7F2989233D33BB003D0C79 /* IngredientsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsListView.xib; sourceTree = "<group>"; };
+		3A7F298B233E77E0003D0C79 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		3A7F298D233E7961003D0C79 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		3A7F2990233E8DDE003D0C79 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		3A7F2991233E8DDE003D0C79 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		3C88AD7451CFEF407ABF96D8 /* Pods_RecipleaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipleaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2A92292498490A94E1CD0E /* Pods-RecipleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.release.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		7518BF8C894856221A598B60 /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +162,8 @@
 		3A7F297E233D1962003D0C79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3A7F298B233E77E0003D0C79 /* Recipe.swift */,
+				3A7F298D233E7961003D0C79 /* Search.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +171,7 @@
 		3A7F297F233D196A003D0C79 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3A7F298F233E8DA0003D0C79 /* SearchTableViewCell */,
 				3A7F2986233D334A003D0C79 /* ingredientsListView */,
 			);
 			path = View;
@@ -208,6 +219,15 @@
 				3A7F2989233D33BB003D0C79 /* IngredientsListView.xib */,
 			);
 			path = ingredientsListView;
+			sourceTree = "<group>";
+		};
+		3A7F298F233E8DA0003D0C79 /* SearchTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3A7F2990233E8DDE003D0C79 /* SearchTableViewCell.swift */,
+				3A7F2991233E8DDE003D0C79 /* SearchTableViewCell.xib */,
+			);
+			path = SearchTableViewCell;
 			sourceTree = "<group>";
 		};
 		4554EB03E3EDAD6D77D7CA86 /* Pods */ = {
@@ -348,6 +368,7 @@
 				3A7F2985233D30E4003D0C79 /* Lemon Brush.otf in Resources */,
 				3A7F298A233D33BB003D0C79 /* IngredientsListView.xib in Resources */,
 				3A7F2952233BD0A6003D0C79 /* Main.storyboard in Resources */,
+				3A7F2993233E8DDE003D0C79 /* SearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,7 +516,10 @@
 				3A7F2955233BD0A6003D0C79 /* Reciplease.xcdatamodeld in Sources */,
 				3A7F294F233BD0A6003D0C79 /* SearchViewController.swift in Sources */,
 				3A7F294D233BD0A6003D0C79 /* AppDelegate.swift in Sources */,
+				3A7F298E233E7961003D0C79 /* Search.swift in Sources */,
 				3A7F2988233D3370003D0C79 /* IngredientsListView.swift in Sources */,
+				3A7F298C233E77E0003D0C79 /* Recipe.swift in Sources */,
+				3A7F2992233E8DDE003D0C79 /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

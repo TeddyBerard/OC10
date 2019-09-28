@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lemon Brush.otf">
+            <string>Lemon-Brush---Personal-Use</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeCell" rowHeight="140" id="KGk-i7-Jjw" customClass="SearchTableViewCell" customModule="Reciplease" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="381" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="381" height="139.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8L-Nm-0cT">
+                        <rect key="frame" x="4" y="4" width="373" height="131.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="t5Q-Pg-TuI">
+                                <rect key="frame" x="8" y="8" width="115.5" height="115.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="t5Q-Pg-TuI" secondAttribute="height" multiplier="1:1" id="iS9-1P-UoE"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients Recipe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygR-b3-g8R">
+                                <rect key="frame" x="131.5" y="36" width="233.5" height="16"/>
+                                <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdR-Cj-KzB">
+                                <rect key="frame" x="127.5" y="100.5" width="241.5" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="ruD-AW-50E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="24"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Recipe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQ5-Nf-wAU">
+                                <rect key="frame" x="131.5" y="8" width="233.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="t5Q-Pg-TuI" firstAttribute="leading" secondItem="s8L-Nm-0cT" secondAttribute="leading" constant="8" id="7L7-c9-IYO"/>
+                            <constraint firstAttribute="bottom" secondItem="t5Q-Pg-TuI" secondAttribute="bottom" constant="8" id="GP5-wM-TXa"/>
+                            <constraint firstItem="XdR-Cj-KzB" firstAttribute="leading" secondItem="t5Q-Pg-TuI" secondAttribute="trailing" constant="4" id="UOv-NH-qdu"/>
+                            <constraint firstItem="t5Q-Pg-TuI" firstAttribute="top" secondItem="s8L-Nm-0cT" secondAttribute="top" constant="8" id="WJJ-iK-RVa"/>
+                            <constraint firstAttribute="trailing" secondItem="XdR-Cj-KzB" secondAttribute="trailing" constant="4" id="aZU-xo-308"/>
+                            <constraint firstAttribute="bottom" secondItem="XdR-Cj-KzB" secondAttribute="bottom" constant="8" id="d0Q-Ym-uwX"/>
+                            <constraint firstItem="ygR-b3-g8R" firstAttribute="leading" secondItem="t5Q-Pg-TuI" secondAttribute="trailing" constant="8" id="gkN-wd-vea"/>
+                            <constraint firstItem="XdR-Cj-KzB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ygR-b3-g8R" secondAttribute="bottom" constant="8" id="js5-mw-euF"/>
+                            <constraint firstItem="eQ5-Nf-wAU" firstAttribute="top" secondItem="s8L-Nm-0cT" secondAttribute="top" constant="8" id="lve-Pe-0va"/>
+                            <constraint firstItem="eQ5-Nf-wAU" firstAttribute="leading" secondItem="t5Q-Pg-TuI" secondAttribute="trailing" constant="8" id="oHE-hL-C0n"/>
+                            <constraint firstAttribute="trailing" secondItem="ygR-b3-g8R" secondAttribute="trailing" constant="8" id="z3k-WG-HOq"/>
+                            <constraint firstItem="ygR-b3-g8R" firstAttribute="top" secondItem="eQ5-Nf-wAU" secondAttribute="bottom" constant="8" id="zSq-jV-rg3"/>
+                            <constraint firstAttribute="trailing" secondItem="eQ5-Nf-wAU" secondAttribute="trailing" constant="8" id="zX2-z4-01w"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="s8L-Nm-0cT" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="6Js-FG-fTh"/>
+                    <constraint firstAttribute="bottom" secondItem="s8L-Nm-0cT" secondAttribute="bottom" constant="4" id="Bwk-Ve-GKq"/>
+                    <constraint firstItem="s8L-Nm-0cT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="DS0-Xg-dlD"/>
+                    <constraint firstItem="s8L-Nm-0cT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MdE-QV-MWj"/>
+                    <constraint firstAttribute="trailing" secondItem="s8L-Nm-0cT" secondAttribute="trailing" constant="4" id="bZ1-v1-pFu"/>
+                    <constraint firstItem="s8L-Nm-0cT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="ksN-w0-ANQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ingredientsLabel" destination="ygR-b3-g8R" id="NpM-h1-LEA"/>
+                <outlet property="nameLabel" destination="eQ5-Nf-wAU" id="Yb8-ub-lki"/>
+                <outlet property="recipeImageView" destination="t5Q-Pg-TuI" id="h1P-bl-Hdo"/>
+                <outlet property="shadowView" destination="s8L-Nm-0cT" id="5bs-AR-sU8"/>
+                <outlet property="timeLabel" destination="XdR-Cj-KzB" id="KSL-ul-wDm"/>
+            </connections>
+            <point key="canvasLocation" x="181.8840579710145" y="117.1875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="thumbnail" width="1920" height="1269"/>
+    </resources>
+</document>
