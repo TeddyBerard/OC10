@@ -14,6 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    static var persistentContainer: NSPersistentContainer {
+        // swiftlint:disable all
+        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+        // swiftlint:enable all
+    }
+
+    static var viewContext: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
+
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         return true

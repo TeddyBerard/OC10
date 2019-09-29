@@ -30,16 +30,26 @@ class Recipe: Codable {
     var image: String
     var ingredients: [String]
     var time: Int
-    var heath: [String]
+    var health: [String]
     var url: String
     var uri: String
+
+    init(label: String, image: String, ingredients: [String], time: Int, health: [String], url: String, uri: String) {
+        self.label = label
+        self.image = image
+        self.ingredients = ingredients
+        self.time = time
+        self.health = health
+        self.url = url
+        self.uri = uri
+    }
 
     private enum CodingKeys: String, CodingKey {
         case label
         case image
         case ingredients = "ingredientLines"
         case time = "totalTime"
-        case heath = "healthLabels"
+        case health = "healthLabels"
         case url
         case uri
     }

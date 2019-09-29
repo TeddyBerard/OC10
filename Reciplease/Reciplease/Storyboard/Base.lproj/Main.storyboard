@@ -18,20 +18,86 @@
         <!--Favorite-->
         <scene sceneID="cYT-X4-I2J">
             <objects>
-                <viewController id="5gs-QP-0Fz" sceneMemberID="viewController">
+                <viewController id="5gs-QP-0Fz" customClass="FavoritesViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ua3-m2-ThF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reciplease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAh-zA-LWj">
+                                <rect key="frame" x="135.66666666666669" y="44" width="142.66666666666669" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="bdR-lh-ef1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OTQ-Op-IfE">
+                                <rect key="frame" x="20" y="124" width="374" height="665"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipe-bookBIG" translatesAutoresizingMaskIntoConstraints="NO" id="SGT-S5-fGd">
+                                        <rect key="frame" x="100" y="150" width="174" height="174"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="SGT-S5-fGd" secondAttribute="height" multiplier="1:1" id="mnh-zP-NMH"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No favorites added, click on a star to add it in your favorites" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zl-vq-AhR">
+                                        <rect key="frame" x="30.666666666666657" y="342" width="313" height="142.66666666666663"/>
+                                        <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="51"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a1r-Y3-8sj">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="665"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="5gs-QP-0Fz" id="wtW-tF-Tl3"/>
+                                            <outlet property="delegate" destination="5gs-QP-0Fz" id="E2Z-s9-QRm"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="SGT-S5-fGd" firstAttribute="centerX" secondItem="OTQ-Op-IfE" secondAttribute="centerX" id="5Mj-Ra-0j9"/>
+                                    <constraint firstAttribute="trailing" secondItem="a1r-Y3-8sj" secondAttribute="trailing" id="7GE-1I-9c2"/>
+                                    <constraint firstItem="SGT-S5-fGd" firstAttribute="leading" secondItem="OTQ-Op-IfE" secondAttribute="leading" constant="100" id="CJa-80-ubA"/>
+                                    <constraint firstItem="SGT-S5-fGd" firstAttribute="top" secondItem="OTQ-Op-IfE" secondAttribute="top" constant="150" id="DIG-53-sm0"/>
+                                    <constraint firstAttribute="bottom" secondItem="a1r-Y3-8sj" secondAttribute="bottom" id="Mbm-1N-Uh9"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Zl-vq-AhR" secondAttribute="trailing" constant="24" id="NHX-zR-SUC"/>
+                                    <constraint firstItem="6Zl-vq-AhR" firstAttribute="centerX" secondItem="OTQ-Op-IfE" secondAttribute="centerX" id="Qyz-LB-8iz"/>
+                                    <constraint firstAttribute="trailing" secondItem="SGT-S5-fGd" secondAttribute="trailing" constant="100" id="SZI-Bh-C1q"/>
+                                    <constraint firstItem="a1r-Y3-8sj" firstAttribute="leading" secondItem="OTQ-Op-IfE" secondAttribute="leading" id="V9X-7H-H02"/>
+                                    <constraint firstItem="6Zl-vq-AhR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OTQ-Op-IfE" secondAttribute="leading" constant="24" id="VJK-EK-3eY"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6Zl-vq-AhR" secondAttribute="bottom" constant="24" id="ZVh-rd-mZN"/>
+                                    <constraint firstItem="a1r-Y3-8sj" firstAttribute="top" secondItem="OTQ-Op-IfE" secondAttribute="top" id="d9Z-Ed-5qx"/>
+                                    <constraint firstItem="6Zl-vq-AhR" firstAttribute="top" secondItem="SGT-S5-fGd" secondAttribute="bottom" constant="18" id="q3h-at-8gu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.89019607840000003" green="0.99607843139999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VAh-zA-LWj" firstAttribute="centerX" secondItem="b9o-uJ-nh9" secondAttribute="centerX" id="5Cw-30-iBw"/>
+                            <constraint firstItem="b9o-uJ-nh9" firstAttribute="trailing" secondItem="OTQ-Op-IfE" secondAttribute="trailing" constant="20" id="8Tx-ld-Zuo"/>
+                            <constraint firstItem="OTQ-Op-IfE" firstAttribute="top" secondItem="VAh-zA-LWj" secondAttribute="bottom" constant="24" id="Btq-z6-0Af"/>
+                            <constraint firstItem="b9o-uJ-nh9" firstAttribute="bottom" secondItem="OTQ-Op-IfE" secondAttribute="bottom" constant="24" id="Hj1-zb-Fwc"/>
+                            <constraint firstItem="VAh-zA-LWj" firstAttribute="top" secondItem="b9o-uJ-nh9" secondAttribute="top" id="YN2-Aj-STS"/>
+                            <constraint firstItem="OTQ-Op-IfE" firstAttribute="centerX" secondItem="b9o-uJ-nh9" secondAttribute="centerX" id="oag-nc-jqe"/>
+                            <constraint firstItem="OTQ-Op-IfE" firstAttribute="leading" secondItem="b9o-uJ-nh9" secondAttribute="leading" constant="20" id="yYm-gb-rJ2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b9o-uJ-nh9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorite" image="recipe-book" selectedImage="recipe-book" id="L88-MU-eHx">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="contentView" destination="OTQ-Op-IfE" id="iVd-9t-cqb"/>
+                        <outlet property="favoritesTableView" destination="a1r-Y3-8sj" id="aOd-OV-fnT"/>
+                        <outlet property="noFavoritesLabel" destination="6Zl-vq-AhR" id="d3g-eg-TcS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVW-6a-YRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-355" y="242"/>
+            <point key="canvasLocation" x="-355.07246376811599" y="241.74107142857142"/>
         </scene>
         <!--Search-->
         <scene sceneID="AaO-61-3Tn">
@@ -223,13 +289,27 @@
                                                     <constraint firstItem="NVs-47-ZMo" firstAttribute="top" secondItem="cF6-Ei-wVG" secondAttribute="bottom" constant="18" id="s9x-EK-1Qg"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7X-3a-pgi">
+                                                <rect key="frame" x="327" y="371" width="69" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="69" id="br8-e4-EXL"/>
+                                                    <constraint firstAttribute="height" constant="30" id="yIb-ZM-xLh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.89019607840000003" green="0.99607843139999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="gl8-LO-GSV" firstAttribute="top" secondItem="S7X-3a-pgi" secondAttribute="bottom" constant="47" id="3e8-Li-Ok9"/>
                                             <constraint firstAttribute="bottom" secondItem="tLf-Rt-voU" secondAttribute="bottom" constant="18" id="8oz-Uk-GiO"/>
                                             <constraint firstItem="tLf-Rt-voU" firstAttribute="leading" secondItem="S2o-w5-Dz9" secondAttribute="leading" constant="18" id="9IB-Wa-ebI"/>
+                                            <constraint firstAttribute="trailing" secondItem="S7X-3a-pgi" secondAttribute="trailing" constant="18" id="BhK-ca-L7f"/>
                                             <constraint firstAttribute="trailing" secondItem="gl8-LO-GSV" secondAttribute="trailing" constant="8" id="CCh-7F-EfN"/>
                                             <constraint firstItem="gl8-LO-GSV" firstAttribute="top" secondItem="w9c-Ce-1Nc" secondAttribute="bottom" constant="34" id="JUv-Y7-xbe"/>
+                                            <constraint firstItem="S7X-3a-pgi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="S2o-w5-Dz9" secondAttribute="leading" constant="20" symbolic="YES" id="KSM-Iu-4iS"/>
                                             <constraint firstAttribute="trailing" secondItem="tLf-Rt-voU" secondAttribute="trailing" constant="18" id="S6h-DC-h0K"/>
                                             <constraint firstItem="w9c-Ce-1Nc" firstAttribute="top" secondItem="S2o-w5-Dz9" secondAttribute="top" id="b7e-Jx-2OT"/>
                                             <constraint firstItem="w9c-Ce-1Nc" firstAttribute="centerX" secondItem="S2o-w5-Dz9" secondAttribute="centerX" id="bHd-Br-OVw"/>
@@ -275,11 +355,13 @@
                     <size key="freeformSize" width="414" height="700"/>
                     <connections>
                         <outlet property="contentView" destination="gl8-LO-GSV" id="7Ez-YJ-wLs"/>
+                        <outlet property="favoriteButton" destination="FYG-7h-WeD" id="JQm-rQ-OQR"/>
                         <outlet property="getDirectionButton" destination="tLf-Rt-voU" id="qvJ-7U-zhn"/>
                         <outlet property="ingredientListLabel" destination="fwd-Ph-47b" id="clf-QB-xI8"/>
                         <outlet property="nameLabel" destination="cF6-Ei-wVG" id="DK6-EG-EK6"/>
                         <outlet property="recipeImageView" destination="w9c-Ce-1Nc" id="Ggq-qf-up6"/>
                         <outlet property="scrollContentView" destination="S2o-w5-Dz9" id="eSa-p4-fD3"/>
+                        <outlet property="timeLabel" destination="S7X-3a-pgi" id="dmS-6I-AhZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SVN-ek-DQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -308,6 +390,7 @@
     <resources>
         <image name="close" width="85.333335876464844" height="85.333335876464844"/>
         <image name="recipe-book" width="32" height="32"/>
+        <image name="recipe-bookBIG" width="512" height="512"/>
         <image name="refrigerator" width="32" height="32"/>
         <image name="starEmpty" width="85.333335876464844" height="85.333335876464844"/>
         <image name="thumbnail" width="1920" height="1269"/>

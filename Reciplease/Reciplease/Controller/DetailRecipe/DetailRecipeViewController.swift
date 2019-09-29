@@ -18,6 +18,8 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var getDirectionButton: UIButton!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var scrollContentView: UIView!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
 
     var recipe: Recipe!
     var image: UIImage?
@@ -34,6 +36,10 @@ class DetailRecipeViewController: UIViewController {
 
     func setupRecipe() {
         nameLabel.text = recipe.label
+        timeLabel.text = "\(recipe.time)m"
+        if recipe.time == 0 {
+            timeLabel.isHidden = true
+        }
         setupIngredients()
         if let image = image {
             recipeImageView.image = image
@@ -56,6 +62,20 @@ class DetailRecipeViewController: UIViewController {
     func setupUI() {
         setupViewUI()
         setupButtonUI()
+        setupLabelTimeUI()
+        setupFavoriteUI()
+    }
+
+    func setupLabelTimeUI() {
+        timeLabel.backgroundColor = nil
+        timeLabel.layer.shadowColor = UIColor.black.cgColor
+        timeLabel.layer.backgroundColor = UIColor.white.cgColor
+        timeLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
+        timeLabel.layer.shadowOpacity = 0.5
+        timeLabel.layer.shadowRadius = 4
+        // Rounded
+        timeLabel.layer.cornerRadius = 12
+        timeLabel.layer.masksToBounds = false
     }
 
     func setupViewUI() {
@@ -82,6 +102,14 @@ class DetailRecipeViewController: UIViewController {
         getDirectionButton.layer.masksToBounds = false
     }
 
+    func setupFavoriteUI() {
+        if RecipeFavorite.isAlreadyFavorite(with: recipe.uri) {
+            favoriteButton.setImage(#imageLiteral(resourceName: "star"), for: .normal)
+        } else {
+            favoriteButton.setImage(#imageLiteral(resourceName: "starEmpty"), for: .normal)
+        }
+    }
+
     // MARK: - IBAction
 
     @IBAction func closeAction(_ sender: Any) {
@@ -97,7 +125,15 @@ class DetailRecipeViewController: UIViewController {
     }
 
     @IBAction func addToFavoritesAction(_ sender: Any) {
-
+        if RecipeFavorite.isAlreadyFavorite(with: recipe.uri) {
+            favoriteButton.setImage(#imageLiteral(resourceName: "starEmpty"), for: .normal)
+            RecipeFavorite.deleteFavorite(with: recipe.uri)
+            RecipeFavorite.save()
+        } else {
+            RecipeFavorite.addRecipe(recipe: recipe)
+            RecipeFavorite.save()
+            favoriteButton.setImage(#imageLiteral(resourceName: "star.png"), for: .normal)
+        }
     }
 
 }
