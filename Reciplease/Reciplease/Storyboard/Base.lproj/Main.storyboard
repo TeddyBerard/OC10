@@ -184,7 +184,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cF6-Ei-wVG">
-                                                        <rect key="frame" x="18" y="16.000000000000004" width="336" height="39.333333333333343"/>
+                                                        <rect key="frame" x="18" y="16.000000000000004" width="326" height="39.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="42"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -196,7 +196,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYG-7h-WeD">
-                                                        <rect key="frame" x="362" y="21" width="28" height="28"/>
+                                                        <rect key="frame" x="352" y="18" width="28" height="28"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="28" id="eb1-4t-yIz"/>
                                                             <constraint firstAttribute="width" constant="28" id="kAc-eA-YAV"/>
@@ -204,14 +204,13 @@
                                                         <state key="normal" image="starEmpty"/>
                                                         <connections>
                                                             <action selector="addToFavoritesAction:" destination="77M-tS-VEy" eventType="touchUpInside" id="1uf-Ja-ZBg"/>
-                                                            <action selector="closeAction:" destination="77M-tS-VEy" eventType="touchUpInside" id="2op-7d-rUc"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="NVs-47-ZMo" firstAttribute="leading" secondItem="gl8-LO-GSV" secondAttribute="leading" constant="18" id="01j-Jf-21e"/>
-                                                    <constraint firstAttribute="trailing" secondItem="FYG-7h-WeD" secondAttribute="trailing" constant="8" id="2Me-Ab-Dzu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="FYG-7h-WeD" secondAttribute="trailing" constant="18" id="2Me-Ab-Dzu"/>
                                                     <constraint firstAttribute="trailing" secondItem="NVs-47-ZMo" secondAttribute="trailing" constant="18" id="5dW-uz-lrP"/>
                                                     <constraint firstAttribute="bottom" secondItem="fwd-Ph-47b" secondAttribute="bottom" constant="18" id="7Yw-nk-4tw"/>
                                                     <constraint firstAttribute="trailing" secondItem="fwd-Ph-47b" secondAttribute="trailing" constant="18" id="Dey-IU-HBe"/>
@@ -220,7 +219,7 @@
                                                     <constraint firstItem="fwd-Ph-47b" firstAttribute="top" secondItem="NVs-47-ZMo" secondAttribute="bottom" constant="24" id="WKh-49-JIm"/>
                                                     <constraint firstItem="fwd-Ph-47b" firstAttribute="leading" secondItem="gl8-LO-GSV" secondAttribute="leading" constant="18" id="Y13-bQ-cPT"/>
                                                     <constraint firstItem="FYG-7h-WeD" firstAttribute="leading" secondItem="cF6-Ei-wVG" secondAttribute="trailing" constant="8" id="abM-wU-gz7"/>
-                                                    <constraint firstItem="FYG-7h-WeD" firstAttribute="top" secondItem="gl8-LO-GSV" secondAttribute="top" constant="21" id="cMp-wo-aZ6"/>
+                                                    <constraint firstItem="FYG-7h-WeD" firstAttribute="top" secondItem="gl8-LO-GSV" secondAttribute="top" constant="18" id="cMp-wo-aZ6"/>
                                                     <constraint firstItem="NVs-47-ZMo" firstAttribute="top" secondItem="cF6-Ei-wVG" secondAttribute="bottom" constant="18" id="s9x-EK-1Qg"/>
                                                 </constraints>
                                             </view>

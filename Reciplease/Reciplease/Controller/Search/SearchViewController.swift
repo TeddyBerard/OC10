@@ -151,13 +151,15 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        guard let detailRecipeViewController = main.instantiateViewController(withIdentifier: "DetailRecipeViewController") as? DetailRecipeViewController else { return }
+        DispatchQueue.main.async {
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            guard let detailRecipeViewController = main.instantiateViewController(withIdentifier: "DetailRecipeViewController") as? DetailRecipeViewController else { return }
 
-        let cell = tableView.cellForRow(at: indexPath) as? SearchTableViewCell
+            let cell = tableView.cellForRow(at: indexPath) as? SearchTableViewCell
 
-        detailRecipeViewController.image = cell?.recipeImageView.image
-        detailRecipeViewController.recipe = recipes[indexPath.row]
-        self.present(detailRecipeViewController, animated: true, completion: nil)
+            detailRecipeViewController.image = cell?.recipeImageView.image
+            detailRecipeViewController.recipe = self.recipes[indexPath.row]
+            self.present(detailRecipeViewController, animated: true, completion: nil)
+        }
     }
 }
