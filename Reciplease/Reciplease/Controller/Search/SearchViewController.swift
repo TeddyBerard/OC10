@@ -17,11 +17,11 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var recipeButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var resultTableView: UITableView!
-    
+
     var search: Search = Search()
-    
+
     var recipes: [Recipe] = []
-    
+
     fileprivate var isDisplayed: Bool = false
 
     // MARK: - Cycle Life
@@ -64,16 +64,16 @@ class SearchViewController: UIViewController {
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = false
     }
-    
+
     func addIngredient() {
         guard let ingredient = ingredientTextField.text?
             .components(separatedBy: .whitespacesAndNewlines)
             .joined() else { return }
-        
+
         ingredientListView.addIngredientToList(ingredient)
         ingredientTextField.text = ""
     }
-    
+
     func resetList() {
         isDisplayed = false
         resultTableView.backgroundColor = .clear
@@ -97,7 +97,7 @@ class SearchViewController: UIViewController {
 
     @IBAction func searchAction(_ sender: Any) {
         guard ingredientListView.ingredients.joined(separator: ",") != "" else { return }
-        
+
         search.searchRecipes(ingredients: ingredientListView.ingredients.joined(separator: ","),
                              completion: { [weak self] hits in
                                 guard let wSelf = self else { return }
@@ -127,7 +127,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipes.count
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
@@ -137,21 +137,27 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             as? SearchTableViewCell else {
                 fatalError("The dequeued cell is not an instance of WeatherTableViewCell.")
         }
-        
-//        cell.setup(name: "Test", ingredients: "TEST ingreidient", time: 10)
-//
-//        cell.selectionStyle = .none
-//        return cell
-        
+
         let recipe = recipes[indexPath.row]
-        
+
         cell.setup(name: recipe.label, ingredients: recipe.ingredients.joined(separator: ", "), time: recipe.time)
         cell.selectionStyle = .none
-        
+
         search.downloadImage(with: recipe.image, completion: { image in
             cell.setupImage(with: image)
         })
-        
+
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        guard let detailRecipeViewController = main.instantiateViewController(withIdentifier: "DetailRecipeViewController") as? DetailRecipeViewController else { return }
+
+        let cell = tableView.cellForRow(at: indexPath) as? SearchTableViewCell
+
+        detailRecipeViewController.image = cell?.recipeImageView.image
+        detailRecipeViewController.recipe = recipes[indexPath.row]
+        self.present(detailRecipeViewController, animated: true, completion: nil)
     }
 }

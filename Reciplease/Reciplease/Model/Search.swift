@@ -10,11 +10,10 @@ import Foundation
 import Alamofire
 
 class Search {
-    
+
     fileprivate var appId: String = "af2fe4f4"
     fileprivate var key: String = "2554d02f82d94abe748667b93f5174b8"
-    
-    
+
     init() { }
 
     func searchRecipes(ingredients: String, completion: @escaping ([Hits]) -> Void) {

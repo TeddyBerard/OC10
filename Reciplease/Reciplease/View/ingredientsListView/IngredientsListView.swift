@@ -99,7 +99,7 @@ class IngredientsListView: UIView {
             addIngredientToList(ingredient)
         }
     }
-    
+
     func clear() {
         listTextView.text = ""
         ingredients = []

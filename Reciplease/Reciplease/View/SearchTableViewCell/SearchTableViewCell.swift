@@ -9,15 +9,14 @@
 import UIKit
 
 class SearchTableViewCell: UITableViewCell {
-    
+
     // MARK: - Properties
-    
+
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var shadowView: UIView!
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,31 +25,31 @@ class SearchTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
+
     // MARK: - Setup cell
-    
+
     func setup(name: String, ingredients: String, time: Int?) {
         nameLabel.text = name
         ingredientsLabel.text = ingredients
         setupImageUI()
         setupView()
-        
+
         if let time = time, time != 0 {
             timeLabel.text = "\(time)m"
         } else {
             timeLabel.text = ""
         }
     }
-    
+
     func setupImage(with imageRecipe: UIImage) {
         recipeImageView.image = imageRecipe
     }
-    
+
     func setupImageUI() {
         recipeImageView.layer.cornerRadius = 12
         recipeImageView.clipsToBounds = true
     }
-    
+
     func setupView() {
         // Shadow
 //        shadowView.backgroundColor = nil
@@ -62,9 +61,9 @@ class SearchTableViewCell: UITableViewCell {
         // Rounded
         contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = true
-        
+
         shadowView.layer.cornerRadius = 12
 
     }
-    
+
 }
