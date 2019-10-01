@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,8 +17,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IngredientsListView" customModule="Reciplease" customModuleProvider="target">
             <connections>
+                <outlet property="clearButton" destination="vRp-O3-NFA" id="uyo-4S-oX7"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="z9j-to-YA4"/>
+                <outlet property="errorLabel" destination="gi8-7O-j2i" id="D0h-9q-CCi"/>
                 <outlet property="listTextView" destination="haL-6F-BTq" id="mGr-I4-4ce"/>
+                <outlet property="recipeImageView" destination="lmi-fO-DfS" id="3wL-z3-Hwu"/>
                 <outlet property="refrigeratorImageView" destination="ndv-gf-G94" id="8U9-Tz-P0R"/>
             </connections>
         </placeholder>
@@ -27,8 +30,19 @@
             <rect key="frame" x="0.0" y="0.0" width="331" height="639"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refrigeratorBig" translatesAutoresizingMaskIntoConstraints="NO" id="ndv-gf-G94">
-                    <rect key="frame" x="0.0" y="5" width="331" height="639"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refrigeratorBig" translatesAutoresizingMaskIntoConstraints="NO" id="ndv-gf-G94">
+                    <rect key="frame" x="31.666666666666657" y="174" width="268" height="301"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="301" id="57j-54-jcE"/>
+                        <constraint firstAttribute="width" constant="268" id="U0B-Lu-xzl"/>
+                    </constraints>
+                </imageView>
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipe-bookBIG" translatesAutoresizingMaskIntoConstraints="NO" id="lmi-fO-DfS">
+                    <rect key="frame" x="90.666666666666686" y="249.66666666666663" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="mol-KP-dHV"/>
+                        <constraint firstAttribute="height" constant="150" id="mqY-gL-Eyt"/>
+                    </constraints>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haL-6F-BTq">
                     <rect key="frame" x="16" y="104" width="299" height="501"/>
@@ -50,26 +64,37 @@
                         <action selector="clearAction:" destination="-1" eventType="touchUpInside" id="onV-EZ-gBf"/>
                     </connections>
                 </button>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gi8-7O-j2i">
+                    <rect key="frame" x="28" y="422.66666666666669" width="275" height="30.333333333333314"/>
+                    <fontDescription key="fontDescription" name="Lemon-Brush---Personal-Use" family="Lemon Brush - Personal Use" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vRp-O3-NFA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="0zA-nI-Far"/>
-                <constraint firstItem="ndv-gf-G94" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="2YG-yf-smT"/>
+                <constraint firstItem="gi8-7O-j2i" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="28" id="54B-W3-eRa"/>
                 <constraint firstItem="haL-6F-BTq" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="5HH-Xf-5dZ"/>
                 <constraint firstItem="ndv-gf-G94" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Ah0-3I-URD"/>
                 <constraint firstAttribute="trailing" secondItem="vRp-O3-NFA" secondAttribute="trailing" constant="15" id="Jyw-LH-6Vd"/>
+                <constraint firstItem="gi8-7O-j2i" firstAttribute="top" secondItem="lmi-fO-DfS" secondAttribute="bottom" constant="23" id="L8j-pq-3Gg"/>
                 <constraint firstItem="haL-6F-BTq" firstAttribute="top" secondItem="vRp-O3-NFA" secondAttribute="bottom" constant="18" id="RvB-z0-AMR"/>
                 <constraint firstItem="haL-6F-BTq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Teu-mo-fPh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="haL-6F-BTq" secondAttribute="trailing" constant="16" id="Yat-se-MZq"/>
-                <constraint firstItem="ndv-gf-G94" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="rxS-qK-ttm"/>
+                <constraint firstItem="lmi-fO-DfS" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="gFL-Lw-lPf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gi8-7O-j2i" secondAttribute="trailing" constant="28" id="ozG-Bs-Qnx"/>
+                <constraint firstItem="lmi-fO-DfS" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="vnD-hX-hTc"/>
                 <constraint firstItem="ndv-gf-G94" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="x63-AM-BCJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gi8-7O-j2i" secondAttribute="bottom" id="zcH-kh-znT"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="12.318840579710146" y="255.46875"/>
+            <point key="canvasLocation" x="10.869565217391305" y="254.79910714285714"/>
         </view>
     </objects>
     <resources>
+        <image name="recipe-bookBIG" width="512" height="512"/>
         <image name="refrigeratorBig" width="512" height="512"/>
     </resources>
 </document>

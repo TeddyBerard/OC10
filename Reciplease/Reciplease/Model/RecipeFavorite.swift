@@ -49,7 +49,7 @@ class RecipeFavorite: NSManagedObject {
             recipeObject.label = recipe.label
             recipeObject.uri = recipe.uri
             recipeObject.image = recipe.image
-            recipeObject.time = Int16(recipe.time)
+            recipeObject.time = recipe.time
             recipeObject.ingredients = recipe.ingredients as NSObject
             recipeObject.health = recipe.health as NSObject
             recipeObject.url = recipe.url
@@ -68,7 +68,7 @@ class RecipeFavorite: NSManagedObject {
 
         return Recipe(label: label,
                             image: image, ingredients: ingredients,
-                            time: Int(favorite.time), health: health,
+                            time: Float(favorite.time), health: health,
                             url: url, uri: uri)
     }
 

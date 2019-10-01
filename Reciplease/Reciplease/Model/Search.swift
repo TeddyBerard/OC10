@@ -12,21 +12,37 @@ import Alamofire
 class Search {
 
     fileprivate var appId: String = "af2fe4f4"
-    fileprivate var key: String = "2554d02f82d94abe748667b93f5174b8"
+    fileprivate let key: String = "2554d02f82d94abe748667b93f5174b8"
+    fileprivate var baseUrl: String = "https://api.edamam.com/search"
+    fileprivate let searchNumber = 25
 
     init() { }
 
-    func searchRecipes(ingredients: String, completion: @escaping ([Hits]) -> Void) {
-        guard let url = URL(string: "https://api.edamam.com/search?q=\(ingredients)&app_id=\(appId)&app_key=\(key)") else { return }
+    enum SearchError: Error {
+        case occuredErrorRequest
+        case noResult
+    }
 
-        AF.request(url).response { response in
-            guard let data = response.data else { return }
+    func searchRecipes(ingredients: String, from: Int, completion: @escaping ([Hits], Int, Error?) -> Void) {
+        guard let url = URL(string: "\(baseUrl)?q=\(ingredients)&app_id=\(appId)&app_key=\(key)&from=0&to=\(from + searchNumber)") else { return }
 
-            do {
-                let recipes = try JSONDecoder().decode(Recipes.self, from: data)
-                completion(recipes.hits)
-            } catch let error {
-                print(error)
+        AF.request(url).validate().response { response in
+
+            switch response.result {
+            case .success(let data):
+                guard let data = data else {
+                    completion([], from, SearchError.occuredErrorRequest)
+                    return
+                }
+
+                do {
+                    let recipes = try JSONDecoder().decode(Recipes.self, from: data)
+                    completion(recipes.hits, from + self.searchNumber, nil)
+                } catch let error {
+                    completion([], from, error)
+                }
+            case .failure:
+                completion([], from, SearchError.occuredErrorRequest)
             }
         }
     }

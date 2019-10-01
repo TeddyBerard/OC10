@@ -15,8 +15,12 @@ class IngredientsListView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var listTextView: UITextView!
     @IBOutlet weak var refrigeratorImageView: UIImageView!
-
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var recipeImageView: UIImageView!
+    @IBOutlet weak var clearButton: UIButton!
+    
     var ingredients: [String] = []
+    var from = 0
 
     // MARK: - Init
 
@@ -52,10 +56,10 @@ class IngredientsListView: UIView {
         contentView.layer.masksToBounds = true
     }
 
-    fileprivate func scaleImage(scale: CGFloat, completion: (() -> Void)?) {
+    fileprivate func scaleImage(image: UIImageView, scale: CGFloat, completion: (() -> Void)?) {
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.7, animations: {
-                self.refrigeratorImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+                image.transform = CGAffineTransform(scaleX: scale, y: scale)
             }, completion: { _ in
                 completion?()
             })
@@ -72,7 +76,7 @@ class IngredientsListView: UIView {
         } else {
             ingredients.append(ingredient)
             if ingredients.count == 1 {
-                scaleImage(scale: 0.001, completion: {
+                scaleImage(image: refrigeratorImageView, scale: 0.001, completion: {
                     self.displayList()
                 })
             } else {
@@ -82,6 +86,7 @@ class IngredientsListView: UIView {
     }
 
     func displayList() {
+        listTextView.isHidden = false
         listTextView.text = ""
         for (index, ingredient) in ingredients.enumerated() {
             if index == 0 {
@@ -101,9 +106,29 @@ class IngredientsListView: UIView {
     }
 
     func clear() {
+        from = 0
         listTextView.text = ""
         ingredients = []
-        scaleImage(scale: 1, completion: nil)
+        refrigeratorImageView.isHidden = false
+        scaleImage(image: refrigeratorImageView, scale: 1, completion: nil)
+        errorLabel.isHidden = true
+        recipeImageView.isHidden = true
+    }
+
+    func displayError(error: Error = Search.SearchError.noResult) {
+        recipeImageView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+        recipeImageView.isHidden = false
+        listTextView.isHidden = true
+        errorLabel.isHidden = false
+        clearButton.isHidden = true
+        refrigeratorImageView.isHidden = true
+        switch error {
+        case Search.SearchError.occuredErrorRequest:
+            errorLabel.text = "An error is occured please try again."
+        default:
+            errorLabel.text = "No result found, please try with another aliments"
+        }
+        scaleImage(image: recipeImageView, scale: 1, completion: nil)
     }
 
     // MARK: - @IBAction
