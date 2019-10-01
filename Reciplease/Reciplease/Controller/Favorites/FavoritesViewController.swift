@@ -97,6 +97,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
 
         cell.setup(name: recipe.label, ingredients: recipe.ingredients.joined(separator: ", "), time: recipe.time)
         cell.selectionStyle = .none
+        cell.recipeImageView.image = #imageLiteral(resourceName: "thumbnail")
 
         search.downloadImage(with: recipe.image, completion: { image in
             cell.setupImage(with: image)

@@ -29,12 +29,12 @@ class Recipe: Codable {
     var label: String
     var image: String
     var ingredients: [String]
-    var time: Int
+    var time: Float
     var health: [String]
     var url: String
     var uri: String
 
-    init(label: String, image: String, ingredients: [String], time: Int, health: [String], url: String, uri: String) {
+    init(label: String, image: String, ingredients: [String], time: Float, health: [String], url: String, uri: String) {
         self.label = label
         self.image = image
         self.ingredients = ingredients

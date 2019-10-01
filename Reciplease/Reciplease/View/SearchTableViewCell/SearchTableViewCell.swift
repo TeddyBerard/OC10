@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchTableViewCell: UITableViewCell {
 
@@ -22,13 +23,22 @@ class SearchTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        recipeImageView.image = #imageLiteral(resourceName: "thumbnail")
+        nameLabel.text = ""
+        ingredientsLabel.text = ""
+        timeLabel.text = ""
+    }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 
     // MARK: - Setup cell
 
-    func setup(name: String, ingredients: String, time: Int?) {
+    func setup(name: String, ingredients: String, time: Float?) {
         nameLabel.text = name
         ingredientsLabel.text = ingredients
         setupImageUI()

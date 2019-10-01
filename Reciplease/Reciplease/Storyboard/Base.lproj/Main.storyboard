@@ -167,14 +167,19 @@
                                     <outlet property="delegate" destination="1K8-s4-INZ" id="LQH-IX-oKu"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2GY-rw-zsZ">
+                                <rect key="frame" x="197" y="418.66666666666669" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.89019607840000003" green="0.99607843139999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uIw-Vo-g5B" firstAttribute="leading" secondItem="gQ8-NV-rNl" secondAttribute="leading" constant="40" id="4AH-4C-b7y"/>
                             <constraint firstItem="xCE-9R-YAX" firstAttribute="top" secondItem="N5r-fZ-IXQ" secondAttribute="bottom" constant="18" id="5VB-D9-nRO"/>
                             <constraint firstItem="N5r-fZ-IXQ" firstAttribute="leading" secondItem="gQ8-NV-rNl" secondAttribute="leading" constant="38" id="8Jd-Kg-42U"/>
+                            <constraint firstItem="2GY-rw-zsZ" firstAttribute="centerY" secondItem="gQ8-NV-rNl" secondAttribute="centerY" id="9FW-WH-VG1"/>
                             <constraint firstItem="xCE-9R-YAX" firstAttribute="leading" secondItem="gQ8-NV-rNl" secondAttribute="leading" constant="38" id="Jqu-pq-Dl3"/>
                             <constraint firstItem="gQ8-NV-rNl" firstAttribute="trailing" secondItem="xCE-9R-YAX" secondAttribute="trailing" constant="38" id="K18-6Y-J4g"/>
+                            <constraint firstItem="2GY-rw-zsZ" firstAttribute="centerX" secondItem="gQ8-NV-rNl" secondAttribute="centerX" id="OuQ-wt-FcF"/>
                             <constraint firstItem="uIw-Vo-g5B" firstAttribute="top" secondItem="N5r-fZ-IXQ" secondAttribute="bottom" constant="23" id="SsX-MY-8EP"/>
                             <constraint firstItem="1Cr-W9-LST" firstAttribute="top" secondItem="xCE-9R-YAX" secondAttribute="bottom" constant="18" id="VQ5-Gc-hXg"/>
                             <constraint firstItem="N5r-fZ-IXQ" firstAttribute="top" secondItem="Wts-ry-8kl" secondAttribute="bottom" constant="24" id="ZJp-c7-yoD"/>
@@ -195,6 +200,7 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="activityIndication" destination="2GY-rw-zsZ" id="rUm-ii-N2s"/>
                         <outlet property="addButton" destination="OJS-bi-OE2" id="srx-dl-6OF"/>
                         <outlet property="ingredientListView" destination="xCE-9R-YAX" id="bFe-Y7-ir6"/>
                         <outlet property="ingredientTextField" destination="6EO-3b-tk2" id="Pu8-Do-mpR"/>
