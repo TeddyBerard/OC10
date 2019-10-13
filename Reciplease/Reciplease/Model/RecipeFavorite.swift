@@ -23,16 +23,16 @@ class RecipeFavorite: NSManagedObject {
     // MARK: - Gestion
 
     static func save() {
-        DispatchQueue.main.async {
-            try? AppDelegate.viewContext.save()
-        }
+        try? AppDelegate.viewContext.save()
     }
 
-    static func deleteFavorite(with uri: String) {
+    static func deleteFavorite(with uri: String) -> Bool {
         let context = AppDelegate.viewContext
         if let favorite = all.first(where: { $0.uri == uri }) {
             context.delete(favorite)
+            return true
         }
+        return false
     }
 
     static func isAlreadyFavorite(with uri: String) -> Bool {
@@ -43,17 +43,15 @@ class RecipeFavorite: NSManagedObject {
     }
 
     static func addRecipe(recipe: Recipe) {
-        DispatchQueue.main.async {
-            let recipeObject = RecipeFavorite(context: AppDelegate.viewContext)
+        let recipeObject = RecipeFavorite(context: AppDelegate.viewContext)
 
-            recipeObject.label = recipe.label
-            recipeObject.uri = recipe.uri
-            recipeObject.image = recipe.image
-            recipeObject.time = recipe.time
-            recipeObject.ingredients = recipe.ingredients as NSObject
-            recipeObject.health = recipe.health as NSObject
-            recipeObject.url = recipe.url
-        }
+        recipeObject.label = recipe.label
+        recipeObject.uri = recipe.uri
+        recipeObject.image = recipe.image
+        recipeObject.time = recipe.time
+        recipeObject.ingredients = recipe.ingredients as NSObject
+        recipeObject.health = recipe.health as NSObject
+        recipeObject.url = recipe.url
     }
 
     static func getRecipes() -> [Recipe] {

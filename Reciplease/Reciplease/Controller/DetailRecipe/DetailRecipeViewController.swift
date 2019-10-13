@@ -127,8 +127,9 @@ class DetailRecipeViewController: UIViewController {
     @IBAction func addToFavoritesAction(_ sender: Any) {
         if RecipeFavorite.isAlreadyFavorite(with: recipe.uri) {
             favoriteButton.setImage(#imageLiteral(resourceName: "starEmpty"), for: .normal)
-            RecipeFavorite.deleteFavorite(with: recipe.uri)
-            RecipeFavorite.save()
+            if RecipeFavorite.deleteFavorite(with: recipe.uri) {
+                RecipeFavorite.save()
+            }
         } else {
             RecipeFavorite.addRecipe(recipe: recipe)
             RecipeFavorite.save()

@@ -18,7 +18,7 @@ class IngredientsListView: UIView {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var clearButton: UIButton!
-    
+
     var ingredients: [String] = []
     var from = 0
 

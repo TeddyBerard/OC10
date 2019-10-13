@@ -99,8 +99,10 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         cell.recipeImageView.image = #imageLiteral(resourceName: "thumbnail")
 
-        search.downloadImage(with: recipe.image, completion: { image in
-            cell.setupImage(with: image)
+        search.downloadImage(with: recipe.image, completion: { image, _  in
+            if let image = image {
+                cell.setupImage(with: image)
+            }
         })
 
         return cell
@@ -109,7 +111,9 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DispatchQueue.main.async {
             let main = UIStoryboard(name: "Main", bundle: nil)
-            guard let detailRecipeViewController = main.instantiateViewController(withIdentifier: "DetailRecipeViewController") as? DetailRecipeViewController else { return }
+            guard let detailRecipeViewController =
+                main.instantiateViewController(withIdentifier: "DetailRecipeViewController") as?
+                DetailRecipeViewController else { return }
 
             let cell = tableView.cellForRow(at: indexPath) as? SearchTableViewCell
 

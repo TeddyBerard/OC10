@@ -114,16 +114,17 @@ class SearchViewController: UIViewController {
     // MARK: - Search Recipes
 
     func searchRecipe() {
-        search.searchRecipes(ingredients: ingredientListView.ingredients.joined(separator: ","), from: ingredientListView.from,
+        search.searchRecipes(ingredients: ingredientListView.ingredients.joined(separator: ","),
+                             from: ingredientListView.from, fakeData: false,
                              completion: { [weak self] hits, from, err in
                                 guard let wSelf = self else {
                                     return
                                 }
-                                
+
                                 wSelf.isDisplayed = true
                                 wSelf.addButton.setTitle("Back", for: .normal)
                                 wSelf.setupAnimator(animated: false)
-                                
+
                                 if let error = err {
                                     wSelf.ingredientListView.displayError(error: error)
                                 } else if hits.count == 0 {
@@ -189,8 +190,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setup(name: recipe.label, ingredients: recipe.ingredients.joined(separator: ", "), time: recipe.time)
         cell.selectionStyle = .none
 
-        search.downloadImage(with: recipe.image, completion: { image in
-            cell.setupImage(with: image)
+        search.downloadImage(with: recipe.image, completion: { image, _  in
+            if let image = image {
+                cell.setupImage(with: image)
+            }
         })
 
         return cell
@@ -199,7 +202,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DispatchQueue.main.async {
             let main = UIStoryboard(name: "Main", bundle: nil)
-            guard let detailRecipeViewController = main.instantiateViewController(withIdentifier: "DetailRecipeViewController") as? DetailRecipeViewController else { return }
+            guard let detailRecipeViewController =
+                main.instantiateViewController(withIdentifier: "DetailRecipeViewController") as?
+                DetailRecipeViewController else { return }
 
             let cell = tableView.cellForRow(at: indexPath) as? SearchTableViewCell
 
