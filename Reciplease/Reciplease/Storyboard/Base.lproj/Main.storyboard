@@ -170,6 +170,17 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2GY-rw-zsZ">
                                 <rect key="frame" x="197" y="418.66666666666669" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0V-gL-VfW">
+                                <rect key="frame" x="362" y="55" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="emH-Is-2Ss"/>
+                                    <constraint firstAttribute="width" constant="34" id="vxK-Oj-YcZ"/>
+                                </constraints>
+                                <state key="normal" image="camera"/>
+                                <connections>
+                                    <action selector="pictureAction:" destination="1K8-s4-INZ" eventType="touchUpInside" id="LdQ-zS-H6f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.89019607840000003" green="0.99607843139999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -184,6 +195,8 @@
                             <constraint firstItem="1Cr-W9-LST" firstAttribute="top" secondItem="xCE-9R-YAX" secondAttribute="bottom" constant="18" id="VQ5-Gc-hXg"/>
                             <constraint firstItem="N5r-fZ-IXQ" firstAttribute="top" secondItem="Wts-ry-8kl" secondAttribute="bottom" constant="24" id="ZJp-c7-yoD"/>
                             <constraint firstItem="1Cr-W9-LST" firstAttribute="top" secondItem="uIw-Vo-g5B" secondAttribute="bottom" constant="26" id="aDE-M6-gDs"/>
+                            <constraint firstItem="q0V-gL-VfW" firstAttribute="top" secondItem="gQ8-NV-rNl" secondAttribute="top" constant="11" id="aHm-Z8-SCS"/>
+                            <constraint firstItem="gQ8-NV-rNl" firstAttribute="trailing" secondItem="q0V-gL-VfW" secondAttribute="trailing" constant="18" id="aVu-if-rI5"/>
                             <constraint firstItem="gQ8-NV-rNl" firstAttribute="bottom" secondItem="1Cr-W9-LST" secondAttribute="bottom" constant="18" id="cdS-eL-hkv"/>
                             <constraint firstItem="N5r-fZ-IXQ" firstAttribute="height" secondItem="1Cr-W9-LST" secondAttribute="height" id="f1r-3l-Mrq"/>
                             <constraint firstItem="gQ8-NV-rNl" firstAttribute="trailing" secondItem="N5r-fZ-IXQ" secondAttribute="trailing" constant="38" id="oMz-RC-aew"/>
@@ -204,6 +217,7 @@
                         <outlet property="addButton" destination="OJS-bi-OE2" id="srx-dl-6OF"/>
                         <outlet property="ingredientListView" destination="xCE-9R-YAX" id="bFe-Y7-ir6"/>
                         <outlet property="ingredientTextField" destination="6EO-3b-tk2" id="Pu8-Do-mpR"/>
+                        <outlet property="pictureButton" destination="q0V-gL-VfW" id="IP8-xd-SMF"/>
                         <outlet property="recipeButton" destination="1Cr-W9-LST" id="9yK-6a-zBG"/>
                         <outlet property="resultTableView" destination="uIw-Vo-g5B" id="sPe-Es-HBY"/>
                     </connections>
@@ -394,6 +408,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="85.333335876464844" height="85.333335876464844"/>
         <image name="close" width="85.333335876464844" height="85.333335876464844"/>
         <image name="recipe-book" width="32" height="32"/>
         <image name="recipe-bookBIG" width="512" height="512"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A70176623532DC600D5317E /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3A70176523532DC600D5317E /* ObjectDetector.mlmodel */; };
 		3A7F294D233BD0A6003D0C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F294C233BD0A6003D0C79 /* AppDelegate.swift */; };
 		3A7F294F233BD0A6003D0C79 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F294E233BD0A6003D0C79 /* SearchViewController.swift */; };
 		3A7F2952233BD0A6003D0C79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F2950233BD0A6003D0C79 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		081779635CBE0A55E94F1434 /* Pods-Reciplease-RecipleaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease-RecipleaseUITests.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease-RecipleaseUITests/Pods-Reciplease-RecipleaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		08867F6CDE6502B6C3FDB0D2 /* Pods-Reciplease-RecipleaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease-RecipleaseUITests.release.xcconfig"; path = "Target Support Files/Pods-Reciplease-RecipleaseUITests/Pods-Reciplease-RecipleaseUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3A70176523532DC600D5317E /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
 		3A7F2949233BD0A6003D0C79 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7F294C233BD0A6003D0C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A7F294E233BD0A6003D0C79 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A70176423532DB300D5317E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A70176523532DC600D5317E /* ObjectDetector.mlmodel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3A7F2940233BD0A6003D0C79 = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +207,7 @@
 		3A7F2981233D1979003D0C79 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A70176423532DB300D5317E /* Model */,
 				3A7F2983233D30D6003D0C79 /* Fonts */,
 				3A7F2956233BD0A6003D0C79 /* Assets.xcassets */,
 				3A7F294C233BD0A6003D0C79 /* AppDelegate.swift */,
@@ -556,6 +567,7 @@
 				3A7F298C233E77E0003D0C79 /* Recipe.swift in Sources */,
 				3A7F299C23413C79003D0C79 /* FavoritesViewController.swift in Sources */,
 				3A7F2992233E8DDE003D0C79 /* SearchTableViewCell.swift in Sources */,
+				3A70176623532DC600D5317E /* ObjectDetector.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

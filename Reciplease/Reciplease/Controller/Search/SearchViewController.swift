@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Photos
+import Vision
 
 class SearchViewController: UIViewController {
 
@@ -18,9 +20,11 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var resultTableView: UITableView!
     @IBOutlet weak var activityIndication: UIActivityIndicatorView!
+    @IBOutlet weak var pictureButton: UIButton!
 
     var search: Search = Search()
     var recipes: [Recipe] = []
+    var selectedPicture: UIImage?
 
     fileprivate var isDisplayed: Bool = false
 
@@ -39,6 +43,13 @@ class SearchViewController: UIViewController {
     func setupUIButtons() {
         setupButton(button: addButton)
         setupButton(button: recipeButton)
+        setupPictureButton()
+    }
+
+    func setupPictureButton() {
+        if #available(iOS 12, *) {
+            pictureButton.isHidden = false
+        }
     }
 
     func setupUITextField() {
@@ -76,6 +87,7 @@ class SearchViewController: UIViewController {
         }
     }
 
+    /// Add ingredients to list
     func addIngredient() {
         guard let ingredient = ingredientTextField.text?
             .components(separatedBy: .whitespacesAndNewlines)
@@ -107,13 +119,121 @@ class SearchViewController: UIViewController {
             UIView.animate(withDuration: 0.7, animations: {
                 self.ingredientTextField.transform = CGAffineTransform(scaleX: scale, y: scale)
                 self.recipeButton.transform = CGAffineTransform(scaleX: scale, y: scale)
+                self.pictureButton.transform = CGAffineTransform(scaleX: scale, y: scale)
             })
         }
     }
 
+    // MARK: - Utils
+
+    /// Ask the permission to use library or camera
+    fileprivate func askPermissionPicture() {
+        let photos = PHPhotoLibrary.authorizationStatus()
+        if photos == .notDetermined {
+            PHPhotoLibrary.requestAuthorization({status in
+                if status == .authorized {
+                    self.dispayPictureChoice()
+                } else {}
+            })
+        } else if photos == .authorized {
+            self.dispayPictureChoice()
+        }
+    }
+
+    /// Display an alert for the user to select an image
+    fileprivate func dispayPictureChoice() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+
+        let alertController = UIAlertController(title: "Photo source",
+                                   message: "Select a picture to search ingredients in the picture",
+                                   preferredStyle: .actionSheet)
+
+        alertController.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_: UIAlertAction) in
+            imagePicker.sourceType = .camera
+            self.present(imagePicker, animated: true, completion: nil)
+        }))
+
+        alertController.addAction(UIAlertAction(title: "Photo", style: .default, handler: { (_: UIAlertAction) in
+            imagePicker.sourceType = .photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        }))
+
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in }))
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+
+    /// Perform vision request to detect ingredient
+    ///
+    /// - Parameters:
+    ///   - image: image select on library or camera
+    ///   - orientation: image orientation
+    fileprivate func performVisionRequest(with image: CGImage, orientation: CGImagePropertyOrientation) {
+        guard let modelURL = Bundle.main.url(forResource: "ObjectDetector", withExtension: "mlmodelc") else {
+            displayNoFoundIngredient()
+            return
+        }
+
+        do {
+            let visionModel = try VNCoreMLModel(for: MLModel(contentsOf: modelURL))
+            let objectRecognition = VNCoreMLRequest(model: visionModel, completionHandler: { (request, _) in
+                DispatchQueue.main.async(execute: {
+                    if let results = request.results,
+                        results.count > 0 {
+                        self.addDetectedIngredientsToList(results: results)
+                    } else {
+                        self.displayNoFoundIngredient()
+                    }
+                    self.selectedPicture = nil
+                })
+            })
+            let imageRequestHandler = VNImageRequestHandler(cgImage: image,
+                                                            orientation: orientation,
+                                                            options: [:])
+            DispatchQueue.global(qos: .userInitiated).async {
+                do {
+                    try imageRequestHandler.perform([objectRecognition])
+                } catch let error as NSError {
+                    print("Failed to perform image request: \(error)")
+                    self.displayNoFoundIngredient()
+                    return
+                }
+            }
+        } catch {
+            displayNoFoundIngredient()
+        }
+    }
+
+    /// Add the detected objects name on list
+    ///
+    /// - Parameter results: objects detected
+    fileprivate func addDetectedIngredientsToList(results: [Any]) {
+        let identifierText = results.compactMap({ $0 as? VNRecognizedObjectObservation })
+                                    .compactMap({ $0.labels[0].identifier })
+                                    .joined(separator: ", ")
+
+        self.ingredientTextField.text = identifierText
+        addIngredient()
+    }
+
+    /// Display an alert when the vision request not found ingredients
+    fileprivate func displayNoFoundIngredient() {
+        let message = "Please retake photo or select another, if the problem persist contact us."
+        let alertController = UIAlertController(title: "Ingredient not found.",
+                                                message: message,
+                                                preferredStyle: .alert)
+        let close = UIAlertAction(title: "Close", style: .cancel)
+        alertController.addAction(close)
+        self.present(alertController, animated: true, completion: nil)
+    }
+
     // MARK: - Search Recipes
 
+    /// Search recipe
     func searchRecipe() {
+        addButton.setTitle("Back", for: .normal)
         search.searchRecipes(ingredients: ingredientListView.ingredients.joined(separator: ","),
                              from: ingredientListView.from, fakeData: false,
                              completion: { [weak self] hits, from, err in
@@ -122,7 +242,6 @@ class SearchViewController: UIViewController {
                                 }
 
                                 wSelf.isDisplayed = true
-                                wSelf.addButton.setTitle("Back", for: .normal)
                                 wSelf.setupAnimator(animated: false)
 
                                 if let error = err {
@@ -159,6 +278,11 @@ class SearchViewController: UIViewController {
         setupAnimateSearch(to: 0.0001)
         searchRecipe()
     }
+
+    @IBAction func pictureAction(_ sender: Any) {
+        askPermissionPicture()
+    }
+
 }
 
 // MARK: - UITableViewDelegate & UITableViewDataSource & Setup TableView
@@ -169,6 +293,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         resultTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil),
                                   forCellReuseIdentifier: "recipeCell")
         resultTableView.separatorStyle = .none
+        resultTableView.isHidden = true
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -219,4 +344,26 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             searchRecipe()
         }
     }
+}
+
+extension SearchViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectedPicture = pickedImage
+        }
+        picker.dismiss(animated: true, completion: {
+            if let image = self.selectedPicture?.cgImage,
+                let orientation = self.selectedPicture?.imageOrientation,
+                let cgOrientation = CGImagePropertyOrientation(rawValue: UInt32(orientation.rawValue)) {
+                    self.performVisionRequest(with: image, orientation: cgOrientation)
+            }
+        })
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+
 }

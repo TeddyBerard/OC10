@@ -25,6 +25,13 @@ class Search {
         case wrongURL
     }
 
+    /// Search recipe with list of ingredients
+    ///
+    /// - Parameters:
+    ///   - ingredients: ingredients requested
+    ///   - from: index in the recipes list
+    ///   - fakeData: fake data for test unit
+    ///   - completion: completion block
     func searchRecipes(ingredients: String, from: Int, fakeData: Bool = false,
                        completion: @escaping ([Hits], Int, Error?) -> Void) {
         guard let url =
@@ -56,6 +63,11 @@ class Search {
         }
     }
 
+    /// Download image with url
+    ///
+    /// - Parameters:
+    ///   - url: image url
+    ///   - completion: completion block
     func downloadImage(with url: String, completion: @escaping (UIImage?, Error?) -> Void) {
         guard let url = URL(string: url) else {
             completion(nil, SearchError.wrongURL)

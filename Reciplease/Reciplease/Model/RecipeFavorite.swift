@@ -22,10 +22,15 @@ class RecipeFavorite: NSManagedObject {
 
     // MARK: - Gestion
 
+    /// Save the currect change on the coredata
     static func save() {
         try? AppDelegate.viewContext.save()
     }
 
+    /// Delete favorite from uri
+    ///
+    /// - Parameter uri: favorite uri
+    /// - Returns: return `true` if the favorite is deleted otherwise `false`
     static func deleteFavorite(with uri: String) -> Bool {
         let context = AppDelegate.viewContext
         if let favorite = all.first(where: { $0.uri == uri }) {
@@ -35,6 +40,10 @@ class RecipeFavorite: NSManagedObject {
         return false
     }
 
+    /// Check if the recipe is already is the favorite
+    ///
+    /// - Parameter uri: recipe uri
+    /// - Returns: return `true` if the favorite is already on favorites otherwise `false`
     static func isAlreadyFavorite(with uri: String) -> Bool {
         if all.first(where: { $0.uri == uri }) != nil {
             return true
@@ -42,6 +51,9 @@ class RecipeFavorite: NSManagedObject {
         return false
     }
 
+    /// Add recipe on CoreData
+    ///
+    /// - Parameter recipe: recipe requested
     static func addRecipe(recipe: Recipe) {
         let recipeObject = RecipeFavorite(context: AppDelegate.viewContext)
 
@@ -54,10 +66,17 @@ class RecipeFavorite: NSManagedObject {
         recipeObject.url = recipe.url
     }
 
+    /// Get the recipes from CoreData
+    ///
+    /// - Returns: return all recipe save on CoreData
     static func getRecipes() -> [Recipe] {
         return all.compactMap({ RecipeFavorite.getRecipe(with: $0) })
     }
 
+    /// Get the recipe from recipe favorite
+    ///
+    /// - Parameter favorite: favorite recipe
+    /// - Returns: recipe from CoreData
     fileprivate static func getRecipe(with favorite: RecipeFavorite) -> Recipe? {
         guard let label = favorite.label, let image = favorite.image,
             let ingredients = favorite.ingredients as? [String],
