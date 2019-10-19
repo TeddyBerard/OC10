@@ -25,6 +25,7 @@ class SearchViewController: UIViewController {
     var search: Search = Search()
     var recipes: [Recipe] = []
     var selectedPicture: UIImage?
+    var isLoading: Bool = false
 
     fileprivate var isDisplayed: Bool = false
 
@@ -233,6 +234,7 @@ class SearchViewController: UIViewController {
 
     /// Search recipe
     func searchRecipe() {
+        isLoading = true
         addButton.setTitle("Back", for: .normal)
         search.searchRecipes(ingredients: ingredientListView.ingredients.joined(separator: ","),
                              from: ingredientListView.from, fakeData: false,
@@ -242,6 +244,7 @@ class SearchViewController: UIViewController {
                                 }
 
                                 wSelf.isDisplayed = true
+                                wSelf.isLoading = false
                                 wSelf.setupAnimator(animated: false)
 
                                 if let error = err {
@@ -340,7 +343,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row + 1 == recipes.count {
+        if indexPath.row + 1 == recipes.count,
+            !isLoading {
             searchRecipe()
         }
     }
