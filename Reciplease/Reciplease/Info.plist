@@ -38,6 +38,8 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We will use your camera and library for detect ingredients.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We will use your camera and library for detect ingredients.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
