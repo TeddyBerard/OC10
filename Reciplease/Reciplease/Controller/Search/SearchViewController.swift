@@ -140,6 +140,10 @@ class SearchViewController: UIViewController {
             self.dispayPictureChoice()
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     /// Display an alert for the user to select an image
     fileprivate func dispayPictureChoice() {

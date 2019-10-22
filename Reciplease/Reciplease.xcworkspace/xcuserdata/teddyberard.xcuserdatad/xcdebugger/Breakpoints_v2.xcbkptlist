@@ -28,11 +28,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reciplease/Controller/Search/SearchViewController.swift"
-            timestampString = "593420190.672243"
+            timestampString = "593463991.14886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "searchRecipe()"
             landmarkType = "7">
          </BreakpointContent>
